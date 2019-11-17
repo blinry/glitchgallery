@@ -1,0 +1,22 @@
+---
+title: Search
+---
+
+.text
+    p This page lists all works we currently have on display.
+    input type="text" placeholder="Type to filter..." id="search"
+
+.grid.small#grid
+    - exhibits.each do |exhibit|
+        a href=exhibit.path
+            .item
+                .cover
+                    img.exhibit src=works_for(exhibit).first.path
+                p
+                    strong =(exhibit[:title] + " ")
+                    br
+                    em =exhibit[:creator]
+                    |,
+                    =< exhibit[:year]
+
+script src="/assets/scripts/filter.js"

@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+compile "/**/*.scss" do
+    filter :sass, syntax: :scss
+    write item.identifier.without_ext + ".css"
+end
+
+compile "/*.xml" do
+    filter :erb
+    write item.identifier
+end
+
+compile "/**/*.md" do
+    filter :kramdown
+    layout "/default.*"
+    write item.identifier.without_ext + ".html"
+end
+
+compile "/**/*.slim" do
+    filter :slim
+    layout "/default.*"
+    write item.identifier.without_ext + ".html"
+end
+
+passthrough "/**/*"
+
+layout "/**/*", :slim

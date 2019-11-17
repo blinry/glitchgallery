@@ -1,0 +1,180 @@
+@import "variables";
+
+/*
+#breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    a {
+        margin: 0 0.5em;
+        &:before {
+            content: "»";
+        }
+    }
+}
+*/
+
+#breadcrumbs {
+    background: #e7e7e7;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    a {
+        padding: 0.5rem 0.5rem 0.5rem 2rem;
+        position: relative;
+
+        &:nth-child(1) {
+            background: hsla(239, 0%, 70%, 1);
+            padding-left: 1rem;
+            &:after {
+                border-left-color: hsla(239, 0%, 70%, 1);
+            }
+        }
+        &:nth-child(2) {
+            background: hsla(239, 0%, 75%, 1);
+            &:after {
+                border-left-color: hsla(239, 0%, 75%, 1);
+            }
+        }
+        &:nth-child(3) {
+            background: hsla(239, 0%, 83%, 1);
+            &:after {
+                border-left-color: hsla(239, 0%, 83%, 1);
+            }
+        }
+
+        &:nth-child(4) {
+            background: hsla(239, 0%, 90%, 1);
+            &:after {
+                border-left-color: hsla(239, 0%, 90%, 1);
+            }
+        }
+
+        &:after {
+            content: " ";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 1.2rem solid transparent;
+            border-bottom: 1.2rem solid transparent;
+            border-left: 10px solid transparent;
+            position: absolute;
+            top: 50%;
+            margin-top: -1.2rem;
+            left: 100%;
+            z-index: 2;
+        }
+
+        &:hover {
+            color: white;
+            background: grey;
+        }
+
+        &:hover:after {
+            border-left-color: grey;
+        }
+
+    }
+}
+
+header, footer {
+    background: #eee;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    h1:hover {
+        color: darkblue;
+    }
+
+    a:hover {
+        color: $museumblue;
+    }
+
+    > a {
+        flex-grow: 1;
+        text-align: center;
+        h1 {
+            font-size: 1.5rem;
+            margin: 1rem;
+        }
+    }
+    nav {
+        flex-grow: 9999;
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: baseline;
+        a {
+            padding: 0.5rem 1.5rem;
+        }
+        a.active {
+            background: #ddd;
+        }
+        .button {
+            color: white !important;
+            background: darkblue;
+            padding: 0.5rem 1rem;
+            margin: 1rem;
+            margin-left: auto;
+        }
+    }
+}
+
+header {
+    z-index: 2;
+}
+
+footer a {
+    margin: 1rem 0;
+}
+
+footer, #breadcrumbs {
+    z-index: 1;
+}
+
+footer, header, #breadcrumbs {
+    box-shadow: 1px 1px 20px rgba(100, 100, 100, 20%);
+}
+
+#alert, #notice {
+    display: flex;
+    padding: 1rem;
+    color: white;
+}
+
+#alert {
+    background: red;
+}
+
+#notice {
+    background: green;
+}
+
+/* https://ianlunn.github.io/Hover/ */
+
+.button {
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        border: darkblue solid 4px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition-duration: 0.3s;
+        transition-property: top, right, bottom, left;
+    }
+    &:hover:before, &:focus:before, &:active:before {
+        top: -8px;
+        right: -8px;
+        bottom: -8px;
+        left: -8px;
+    }
+}

@@ -1,0 +1,24 @@
+prune:
+  auto_prune: true
+
+data_sources:
+  -
+    type: filesystem
+
+deploy:
+  default:
+    kind: rsync
+    dst: "morr.cc:/web/morr.cc/gg"
+    options: [
+      '--group',
+      '--links',
+      '--perms',
+      '--partial',
+      '--progress',
+      '--recursive',
+      '--times',
+      '--verbose',
+      '--compress',
+      '--chmod=u=rwX,go=rX',
+      '--delete-after'
+    ]

@@ -1,0 +1,95 @@
+@import "variables";
+
+.outercontainer {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+
+        .exhibit {
+            max-height: calc(60vh);
+            max-width: 70%;
+            margin: 3rem;
+        }
+
+        .label {
+            margin: 3em;
+            max-width: 25em;
+            min-width: 15em;
+            padding: 1em;
+            overflow: hidden;
+            display: grid;
+            grid-template: auto auto / 1fr 7rem;
+            grid-gap: 1em;
+
+            p {
+                margin-bottom: 1em;
+            }
+
+            .rightcorner, .leftcorner {
+                p {
+                    margin-bottom: 0;
+                }
+            }
+
+            .rightcorner {
+                text-align: right;
+            }
+
+            .body {
+                grid-column: 1 / 3;
+            }
+
+            a {
+                color: $museumblue;
+            }
+        }
+    }
+}
+
+.mute {
+    cursor: pointer;
+    justify-self: flex-end;
+    grid-column: 2 / 3;
+    img {
+        max-height: 1rem;
+    }
+}
+
+#prev, #next {
+    color: white;
+    width: 3em;
+    height: 3em;
+    background: rgba(120, 120, 120, 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: calc(50% - 1.5em);
+    transition: all 0.2s ease-in-out;
+    &:hover {
+        background: darkblue;
+        width: 3.5rem;
+    }
+    img {
+        height: 2em;
+    }
+}
+
+
+#prev {
+    left: 0;
+    border-radius: 0 10px 10px 0;
+}
+
+#next {
+    right: 0;
+    border-radius: 10px 0 0 10px;
+}

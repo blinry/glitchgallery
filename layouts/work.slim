@@ -1,0 +1,19 @@
+- work = works_for(@item).first
+
+.outercontainer
+    .container
+        img.exhibit src=work.path
+        .label
+            .leftcorner
+                p
+                    strong =@item[:title]
+                p
+                    em =@item[:creator]
+                    | ,
+                    =< @item[:year]
+            .rightcorner
+                p ==@item[:license]
+                p
+                    a href=@item[:source] target="_blank" Source
+            .body
+                == yield

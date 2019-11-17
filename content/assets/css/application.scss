@@ -1,0 +1,26 @@
+@import "variables";
+
+*, body {
+    margin: 0;
+    padding: 0;
+    font-family: Nunito, sans-serif;
+    //border: 0.1px solid black;
+    font-size: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: scroll;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+img {
+    display: block;
+}

@@ -1,0 +1,31 @@
+doctype html
+html lang="en"
+    head
+        meta charset="utf-8"
+
+        title The Glitch Gallery
+        link rel="stylesheet" href="/assets/css/style.css"
+        meta name="viewport" content="width=device-width, initial-scale=0.7"
+
+        link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i" rel="stylesheet"
+        link href="/favicon.ico" rel="shortcut icon"
+
+    body
+        header
+            a href="/"
+                h1 The Glitch Gallery
+            nav
+                a href="/search/" Search
+                a href="/about/" About us
+                a href="/support/" Become a member
+                a.button href="/submit/"  Submit an artwork
+        main
+            - if @item[:license]
+                == render "/work.*" do
+                    == yield
+            - else
+                == yield
+        footer
+            nav
+                a href="/terms/" Terms of use
+                a href="/contact/" Contact
