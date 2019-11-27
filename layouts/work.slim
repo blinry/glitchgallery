@@ -1,19 +1,25 @@
-- work = works_for(@item).first
+- works = works_for(@item)
 
 .outercontainer
     .container
-        img.exhibit src=work.path
         .label
             .leftcorner
-                p
+                p.title
                     strong =@item[:title]
                 p
-                    em =@item[:creator]
+                    - if @item[:homepage]
+                        a href=@item[:homepage] target="_blank"
+                            =@item[:creator]
+                    - else
+                        =@item[:creator]
                     | ,
                     =< @item[:year]
             .rightcorner
-                p ==@item[:license]
-                p
-                    a href=@item[:source] target="_blank" Source
+                - if @item[:license]
+                    p ==@item[:license]
+                - if @item[:source]
+                    p: a href=@item[:source] target="_blank" Source
             .body
                 == yield
+        - works.each do |work|
+            == render "/exhibit.*", work: work, autoplay: true

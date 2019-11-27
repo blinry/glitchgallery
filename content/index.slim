@@ -3,21 +3,11 @@ title: GG
 ---
 
 .text.sign
-    h2 MoAA is opening soon!
+    h2 The Glitch Gallery is opening soon!
     | <p>This will be an <strong>exhibition of pretty software bugs</strong>, an enthusiastic embrace of mistakes, a celebration of emergent beauty.</p>
-    | <p>Below you can check out some examples of what we're looking for. If you have ever encountered such an accidental artwork yourself, we're <strong>inviting you to <a href="<%= new_exhibit_path %>">submit it to us</a></strong>!</p>
+    | <p>Below you can check out some examples of what we're looking for. If you have ever encountered such an accidental artwork yourself, we're <strong>inviting you to <a href="/submit/">submit it to us</a></strong>!</p>
 </div>
 
 .grid.small#grid
     - works.each do |work|
-        - exhibit = exhibit_for(work)
-        a href=exhibit.path
-            .item
-                .cover
-                    img.exhibit src=work.path
-                p
-                    strong =(exhibit[:title] + " ")
-                    br
-                    em =exhibit[:creator]
-                    |,
-                    =< exhibit[:year]
+        == render "/tile.*", work: work

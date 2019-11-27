@@ -20,7 +20,7 @@ html lang="en"
                 a href="/support/" Become a member
                 a.button href="/submit/"  Submit an artwork
         main
-            - if @item[:license]
+            - if @item[:creator]
                 == render "/work.*" do
                     == yield
             - else

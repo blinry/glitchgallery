@@ -1,0 +1,4 @@
+- if image?(@work)
+    img.exhibit src=@work.path
+- if video?(@work)
+    video.exhibit src=@work.path autoplay=(@autoplay ? "autoplay" : nil) loop="loop" muted="muted"

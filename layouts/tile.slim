@@ -1,0 +1,11 @@
+- exhibit = exhibit_for(@work)
+a href=exhibit.path
+    .item
+        .cover
+            == render "/exhibit.*", work: @work, autoplay: @autoplay
+        p
+            strong =(exhibit[:title] + " ")
+            br
+            =exhibit[:creator]
+            |,
+            =< exhibit[:year]

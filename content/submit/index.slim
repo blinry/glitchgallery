@@ -1,0 +1,60 @@
+---
+title: Submit an artwork
+---
+
+.text
+    h2 Submit an artwork
+    p Thanks for your interest in submitting to the Glitch Gallery! We're looking for:
+
+    ol
+        li <strong>images, animations, or videos</strong>
+        li created by <strong>computers or other technical systems</strong>
+        li which are <strong>pretty</strong>
+        li and were created <strong>by accident.</strong>
+
+    p
+
+    p You can submit your own art, or art by other people. In the latter case, we will take care of asking for their consent to display their art at the Glitch Gallery.
+
+    p Ready? Great! There are two ways to submit your artwork:
+
+.text
+    h2 Option 1: Send us an email
+
+    - address = "curator@glitch-gallery.com"
+    - subject = "[Glitch Gallery] Submission"
+    - body = IO.read("content/template/index.md") + "\nDont' forget to attach your artwork!\n"
+
+    p ==("Click <a href=\"mailto:#{address}?subject=#{CGI.escape(subject)}&body=#{CGI.escape(body)}\">this link</a> to open our template in your default mail client. If that doesn't work, please copy the template below into your mail client.")
+
+    p: markdown: Fill out the template, and **attach your artwork**. Files of virtually any size should work.
+
+    .mail
+        p ==("<strong>To:</strong> " + address)
+        p ==("<strong>Subject:</strong> " + subject)
+        pre ==body
+
+.text
+    h2 Option 2: Create a pull request
+
+    p: markdown: This is an option for you if you **know how to use Git**, and have a GitHub account:
+
+    p Fork the project on GitHub. Then, clone it to your machine, and make a copy of the template directory:
+
+    pre: code $ git clone git@github.com:you/glitch-gallery
+        $ cd glitch-gallery/content/
+        $ git checkout -b title-of-your-art
+        $ cp -r template title-of-your-art
+
+    markdown: Fill out `title-of-your-art/index.md`, and drop your art files into the same directory. Then, make and push a commit:
+
+    pre: code $ git add title-of-your-art
+        $ git commit -m "Add fancy art"
+        $ git push
+
+    markdown: Now, go to github.com/you/glitch-gallery and create a pull request. You're done! Thank you so much!
+
+.text
+    h2 Still have questions?
+
+    p Shoot us a mail: ... or a DM on Twitter: ...

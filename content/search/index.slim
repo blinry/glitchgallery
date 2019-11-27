@@ -7,16 +7,7 @@ title: Search
     input type="text" placeholder="Type to filter..." id="search"
 
 .grid.small#grid
-    - exhibits.each do |exhibit|
-        a href=exhibit.path
-            .item
-                .cover
-                    img.exhibit src=works_for(exhibit).first.path
-                p
-                    strong =(exhibit[:title] + " ")
-                    br
-                    em =exhibit[:creator]
-                    |,
-                    =< exhibit[:year]
+    - works.each do |work|
+        == render "/tile.*", work: work
 
 script src="/assets/scripts/filter.js"

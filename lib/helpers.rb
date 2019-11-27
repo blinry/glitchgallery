@@ -9,12 +9,20 @@ def works
 end
 
 def works_for exhibit
-    @items.find_all(exhibit.path+"*png")
+    @items.find_all(exhibit.path+"*") - [exhibit]
 end
 
 def exhibit_for work
     path = work.path.split("/")[0..-2].join("/")+"/index.md"
     @items[path]
+end
+
+def image? work
+    work.path =~ /\.(png|jpg|jpeg|gif|svg)/
+end
+
+def video? work
+    work.path =~ /\.(mp4|mkv|avi|webm)/
 end
 
 def first_item
