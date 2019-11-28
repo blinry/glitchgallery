@@ -9,6 +9,10 @@ def exhibits
     @items.select{|i| i[:submitted] and i[:license] and not works_for(i).empty?}.sort_by{|e| e[:submitted]}
 end
 
+def hidden_exhibits
+    @items.select{|i| i[:creator] and not exhibits.include? i and not i.path == "/template/"}
+end
+
 def works
     exhibits.map{|e| works_for(e)}.flatten
 end
