@@ -8,7 +8,7 @@ title: Search
     input type="text" placeholder="Type to filter..." id="search"
 
 .grid#grid
-    - works.each do |work|
+    - works.reverse.each do |work|
         == render "/tile.*", work: work
 
 .text#nope

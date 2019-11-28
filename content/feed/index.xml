@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>The Glitch Gallery</title>
+    <link href="<%= domain %><%= @item.path[1..-1] %>" rel="self" />
+    <link href="<%= domain %>" />
+    <icon><%= domain %>assets/favicon.ico</icon>
+    <id><%= domain %></id>
+    <updated><%= exhibits.last[:submitted].xmlschema %></updated>
+
+    <% exhibits.reverse.each do |item| %>
+        <entry>
+            <title><%= item[:title] %></title>
+            <link href="<%= if item[:url] then item[:url] else domain.chop+item.path end %>" />
+            <id><%= item.path.split("/").last %></id>
+            <updated><%= item[:submitted].xmlschema %></updated>
+            <author>
+                <name><%= item[:creator] %></name>
+            </author>
+            <content type="html"><![CDATA[
+                <%= item.compiled_content %>
+                <% works_for(item).each do |work| %>
+                    <img src="<%= domain %><%= work.path %>">
+                <% end %>
+            ]]></content>
+        </entry>
+    <% end %>
+</feed>

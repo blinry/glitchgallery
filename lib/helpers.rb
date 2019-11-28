@@ -1,8 +1,12 @@
 include Nanoc::Helpers::Rendering
 include ERB::Util
 
+def domain
+    "http://localhost:3000/"
+end
+
 def exhibits
-    @items.select{|i| i[:license] and not works_for(i).empty?}
+    @items.select{|i| i[:submitted] and i[:license] and not works_for(i).empty?}.sort_by{|e| e[:submitted]}
 end
 
 def works

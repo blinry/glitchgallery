@@ -1,5 +1,13 @@
 #!/usr/bin/env ruby
 
+preprocess do
+    @items.each do |item|
+        if item[:submitted]
+            item[:submitted] = DateTime.parse(item[:submitted].to_s)
+        end
+    end
+end
+
 compile "/**/*.scss" do
     filter :sass, syntax: :scss
     write item.identifier.without_ext + ".css"
@@ -20,6 +28,11 @@ end
 compile "/**/*.slim" do
     filter :slim
     layout "/default.*"
+    write item.identifier.without_ext + ".html"
+end
+
+compile "/**/*.xml" do
+    filter :erb
     write item.identifier.without_ext + ".html"
 end
 

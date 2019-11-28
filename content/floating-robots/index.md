@@ -3,6 +3,7 @@ title: Floating Robots
 creator: Raphael Michel
 year: 2017
 license: CC BY-SA 4.0
+submitted: 2017-11-09
 ---
 
 The coordinate system for the robot's movement were mixed up when simulating a walking movement.
