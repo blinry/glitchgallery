@@ -1,7 +1,7 @@
 include Nanoc::Helpers::Rendering
 
 def exhibits
-    @items.select{|i| i[:license]}
+    @items.select{|i| i[:license] and not works_for(i).empty?}
 end
 
 def works
@@ -25,27 +25,31 @@ def video? work
     work.path =~ /\.(mp4|mkv|avi|webm)/
 end
 
-def first_item
-    things.first
+def first_exhibit
+    exhibits.first
 end
 
-def last_item
-    things.last
+def last_exhibit
+    exhibits.last
 end
 
-def next_item item
-    i = things.find_index(item)
-    if i+1 < things.size
-        things[i+1]
+def next_exhibit item
+    i = exhibits.find_index(item)
+    return nil if i.nil?
+
+    if i+1 < exhibits.size
+        exhibits[i+1]
     else
         nil
     end
 end
 
-def prev_item item
-    i = things.find_index(item)
+def prev_exhibit item
+    i = exhibits.find_index(item)
+    return nil if i.nil?
+
     if i > 0
-        things[things.find_index(item)-1]
+        exhibits[exhibits.find_index(item)-1]
     else
         nil
     end
