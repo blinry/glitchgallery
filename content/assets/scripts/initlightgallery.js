@@ -1,0 +1,1 @@
+lightGallery(document.querySelector(".works"))

@@ -21,8 +21,14 @@
                     p: a href=@item[:source] target="_blank" Source
             .body
                 == yield
-        - works.each do |work|
-            == render "/exhibit.*", work: work, autoplay: true
+        .works
+            - works.each do |work|
+                - if image?(work)
+                    a.exhibit.image href=work.path
+                        == render "/exhibit.*", work: work
+                - if video?(work)
+                    a.exhibit.video#video data-html="#video"
+                        == render "/exhibit.*", work: work, autoplay: true
 
 - if prev_exhibit(@item)
     a#prev href=prev_exhibit(@item).path

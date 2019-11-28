@@ -1,10 +1,15 @@
 - exhibit = exhibit_for(@work)
 a href=exhibit.path
     .item
-        .cover
-            == render "/exhibit.*", work: @work, autoplay: @autoplay, playicon: true
-            - if video?(@work)
+        - if video?(@work)
+            .cover
+                .exhibit.video
+                    == render "/exhibit.*", work: @work, autoplay: @autoplay, playicon: true
                 img.icon src="/assets/icons/play-circle.svg"
+        - if image?(@work)
+            .cover
+                .exhibit.image
+                    == render "/exhibit.*", work: @work
         p
             strong =(exhibit[:title] + " ")
             br

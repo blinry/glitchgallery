@@ -1,4 +1,5 @@
 - if image?(@work)
-    img.exhibit src=@work.path
+    img src=@work.path
 - if video?(@work)
-    video.exhibit src=@work.path autoplay=(@autoplay ? "autoplay" : nil) loop="loop" muted="muted"
+    video autoplay=@autoplay controls=@controls loop="loop" muted="muted" lg-video-object="" lg-html5=""
+        source src=@work.path

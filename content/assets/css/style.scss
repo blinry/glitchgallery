@@ -256,7 +256,7 @@ main {
              -1px 5px 2px -2px hsla(34, 36%, 27%, 0.6); /* brown shadow */
     }
 
-    img.exhibit {
+    .exhibit.image {
         background: white;
         box-shadow: -1px 1px 5px rgba(100, 100, 100, 0.2), /* surrounding */
              -1px 3px 10px 2px hsla(42, 20%, 15%, 0.2), /* side shadow */
@@ -264,7 +264,7 @@ main {
              -2px 30px 15px -5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
     }
 
-    video.exhibit {
+    .exhibit.video {
         background: white;
         box-shadow: 0px 1px 1px 1px #666, /* inner highlight */
             0 0 0 15px #222, /* frame */
@@ -293,15 +293,13 @@ main {
                 justify-content: center;
                 align-items: center;
                 positon: relative;
-                img, video {
+                .exhibit {
                     max-width: 100%;
                     max-height: 100%;
                     width: auto;
-                }
-                .exhibit {
                     transition: all 0.15s ease-in-out;
                 }
-                video.exhibit {
+                .exhibit.video {
                     box-shadow: 0px 1px 1px 1px #666, /* inner highlight */
                         0 0 0 10px #222, /* frame */
                         0px -1px 1px 10px #666, /* top highlight */
@@ -314,7 +312,9 @@ main {
                     max-width: 3rem;
                     max-height: 3rem;
                 }
-                height: 10rem;
+                img, video {
+                    height: 10rem;
+                }
             }
 
             .cover:hover {
@@ -346,14 +346,14 @@ main {
             .exhibit {
                 transform: scale(1.1, 1.1);
             }
-            img.exhibit {
+            .exhibit.image {
                 background: white;
                 box-shadow: -1px 1px 5px -10px rgba(100, 100, 100, 0.2), /* surrounding */
                      -1px 3px 20px -10px hsla(42, 20%, 15%, 0.2), /* side shadow */
                      0px 5px 7px -1px hsla(34, 36%, 27%, 0.6), /* brown shadow */
                      -2px 20px 15px -5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
             }
-            video.exhibit {
+            .exhibit.video {
                 box-shadow: 0px 1px 1px 1px #666, /* inner highlight */
                     0 0 0 10px #222, /* frame */
                     0px -1px 1px 10px #666, /* top highlight */
@@ -390,10 +390,21 @@ main {
         justify-content: center;
         align-items: flex-end;
 
+        .works {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .exhibit {
-            max-height: calc(60vh);
-            max-width: 70%;
             margin: 3rem;
+            cursor: pointer;
+            display: inline-block;
+            img, video {
+                display: block;
+                max-width: calc(70vw);
+                max-height: calc(60vh);
+            }
         }
 
         .label {
