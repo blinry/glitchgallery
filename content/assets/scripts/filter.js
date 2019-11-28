@@ -13,4 +13,15 @@ input.onkeyup = function() {
             item.style.display = "block"
         }
     })
+    if (
+        Array.from(items).every(item => {
+            return item.style.display == "none"
+        })
+    ) {
+        document.querySelector("#nope").style.display = "block"
+        console.log("jo")
+    } else {
+        document.querySelector("#nope").style.display = "none"
+        console.log("no")
+    }
 }
