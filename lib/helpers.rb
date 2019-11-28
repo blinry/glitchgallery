@@ -1,4 +1,5 @@
 include Nanoc::Helpers::Rendering
+include ERB::Util
 
 def exhibits
     @items.select{|i| i[:license] and not works_for(i).empty?}
