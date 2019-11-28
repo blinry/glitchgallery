@@ -3,7 +3,7 @@ html lang="en"
     head
         meta charset="utf-8"
 
-        title The Glitch Gallery
+        title =( + (@item.path == "/" ? "The Glitch Gallery" : @item[:title]))
         link rel="stylesheet" href="/assets/css/style.css"
         link rel="stylesheet" href="/assets/scripts/lightgallery/css/lightgallery.min.css"
         meta name="viewport" content="width=device-width, initial-scale=0.7"
