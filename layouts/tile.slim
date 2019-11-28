@@ -2,7 +2,9 @@
 a href=exhibit.path
     .item
         .cover
-            == render "/exhibit.*", work: @work, autoplay: @autoplay
+            == render "/exhibit.*", work: @work, autoplay: @autoplay, playicon: true
+            - if video?(@work)
+                img.icon src="/assets/icons/play-circle.svg"
         p
             strong =(exhibit[:title] + " ")
             br

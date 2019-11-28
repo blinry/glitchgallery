@@ -2,12 +2,11 @@
 title: GG
 ---
 
-.text.sign
+.text
     h2 The Glitch Gallery is opening soon!
     | <p>This will be an <strong>exhibition of pretty software bugs</strong>, an enthusiastic embrace of mistakes, a celebration of emergent beauty.</p>
     | <p>Below you can check out some examples of what we're looking for. If you have ever encountered such an accidental artwork yourself, we're <strong>inviting you to <a href="/submit/">submit it to us</a></strong>!</p>
-</div>
 
-.grid.small#grid
-    - works.each do |work|
-        == render "/tile.*", work: work
+.grid
+    - exhibits.each do |exhibit|
+        == render "/tile.*", work: works_for(exhibit).first
