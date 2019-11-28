@@ -15,10 +15,10 @@ html lang="en"
             a href="/"
                 h1 The Glitch Gallery
             nav
-                a href="/search/" Search
-                a href="/about/" About us
-                a href="/support/" Become a member
-                a.button href="/submit/"  Submit an artwork
+                a href="/search/" class=(@item.path == "/search/" ? "active" : "") Search
+                a href="/about/" class=(@item.path == "/about/" ? "active" : "") About us
+                a href="/support/" class=(@item.path == "/support/" ? "active" : "") Become a member
+                a.button href="/submit/" class=(@item.path == "/submit/" ? "active" : "")  Submit an artwork
         main
             - if @item[:creator]
                 == render "/work.*" do
@@ -27,6 +27,6 @@ html lang="en"
                 == yield
         footer
             nav
-                a href="/terms/" Terms of use
-                a href="/contact/" Contact
+                a href="/terms/" class=(@item.path == "/terms/" ? "active" : "") Terms of use
+                a href="/contact/" class=(@item.path == "/contact/" ? "active" : "") Contact
         script src="/assets/scripts/mouseover.js"
