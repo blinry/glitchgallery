@@ -1,4 +1,4 @@
-document.querySelectorAll("video").forEach(function(video) {
+document.querySelectorAll(".grid video").forEach(function(video) {
     video.onmouseenter = () => {
         video.play()
     }
