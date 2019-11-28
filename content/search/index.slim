@@ -3,10 +3,11 @@ title: Search
 ---
 
 .text
+    h2 Search
     p This page lists all works we currently have on display.
     input type="text" placeholder="Type to filter..." id="search"
 
-.grid.small#grid
+.grid#grid
     - works.each do |work|
         == render "/tile.*", work: work
 
