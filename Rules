@@ -11,6 +11,7 @@ compile "/*.xml" do
 end
 
 compile "/**/*.md" do
+    filter :target_blank
     filter :kramdown
     layout "/default.*"
     write item.identifier.without_ext + ".html"
