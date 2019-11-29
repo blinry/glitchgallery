@@ -2,7 +2,7 @@ include Nanoc::Helpers::Rendering
 include ERB::Util
 
 def domain
-    "http://localhost:3000/"
+    "https://glitch-gallery.org/"
 end
 
 def exhibits
