@@ -30,11 +30,10 @@
                     a.exhibit.video#video data-html="#video"
                         == render "/exhibit.*", work: work, autoplay: true
 
-- if prev_exhibit(@item)
-    a#prev href=prev_exhibit(@item).path
+- if next_exhibit(@item)
+    a#prev href=next_exhibit(@item).path
         img src="/assets/icons/angle-left.svg"
 
-- if next_exhibit(@item)
-    a#next href=next_exhibit(@item).path
+- if prev_exhibit(@item)
+    a#next href=prev_exhibit(@item).path
         img src="/assets/icons/angle-right.svg"
-
