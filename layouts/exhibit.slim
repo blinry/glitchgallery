@@ -1,5 +1,8 @@
 - if image?(@work)
-    img src=@work.path
+    - if @thumbnail
+        img src=@work.reps[:thumbnail].path
+    - else
+        img src=@work.path
 - if video?(@work)
     video autoplay=@autoplay controls=@controls loop="loop" muted="muted" lg-video-object="" lg-html5=""
         source src=@work.path

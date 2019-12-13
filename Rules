@@ -36,6 +36,11 @@ compile "/**/*.xml" do
     write item.identifier.without_ext + ".html"
 end
 
+compile "/**/*.{png,jpg,gif,svg}", :rep => :thumbnail do
+    filter :thumbnailize, :height => 200
+    write item.identifier + "-thumbnail.png"
+end
+
 passthrough "/**/*"
 
 layout "/**/*", :slim

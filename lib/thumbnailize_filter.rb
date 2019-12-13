@@ -8,7 +8,7 @@ class Thumbnailize < Nanoc::Filter
             filename,
             '--export-area-page',
             '--without-gui',
-            '--export-width='+params[:width].to_s,
+            '--export-height='+params[:height].to_s,
             '--export-png='+output_filename
         )
     end

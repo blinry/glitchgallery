@@ -9,7 +9,7 @@ a href=exhibit.path
         - if image?(@work)
             .cover
                 .exhibit.image
-                    == render "/exhibit.*", work: @work
+                    == render "/exhibit.*", work: @work, thumbnail: true
         p
             strong =(exhibit[:title] + " ")
             br
