@@ -15,7 +15,7 @@
             <id><%= item.path.split("/").last %></id>
             <updated><%= item[:submitted].xmlschema %></updated>
             <author>
-                <name><%= item[:creator] %></name>
+                <name><%= item[:creator] %> (<%= item[:year] %>)</name>
             </author>
             <content type="html"><![CDATA[
                 <%= item.compiled_content %>
