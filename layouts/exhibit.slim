@@ -16,7 +16,7 @@
                     =< @item[:year]
             .rightcorner
                 - if @item[:license]
-                    p ==@item[:license]
+                    p: a href="/terms/" target="_blank" =@item[:license]
                 - if @item[:source]
                     p: a href=@item[:source] target="_blank" Source
             .body
