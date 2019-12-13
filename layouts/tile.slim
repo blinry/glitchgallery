@@ -4,12 +4,12 @@ a href=exhibit.path
         - if video?(@work)
             .cover
                 .exhibit.video
-                    == render "/exhibit.*", work: @work, autoplay: @autoplay, playicon: true
+                    == render "/work.*", work: @work, autoplay: @autoplay, playicon: true
                 img.icon src="/assets/icons/play-circle.svg"
         - if image?(@work)
             .cover
                 .exhibit.image
-                    == render "/exhibit.*", work: @work, thumbnail: true
+                    == render "/work.*", work: @work, thumbnail: true
         p
             strong =(exhibit[:title] + " ")
             br

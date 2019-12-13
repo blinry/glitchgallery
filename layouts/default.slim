@@ -22,7 +22,7 @@ html lang="en"
                 a.button href="/submit/" class=(@item.path == "/submit/" ? "active" : "")  Submit an artwork
         main
             - if @item[:creator]
-                == render "/work.*" do
+                == render "/exhibit.*" do
                     == yield
             - else
                 == yield

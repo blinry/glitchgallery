@@ -1,8 +1,39 @@
-- if image?(@work)
-    - if @thumbnail
-        img src=@work.reps[:thumbnail].path
-    - else
-        img src=@work.path
-- if video?(@work)
-    video autoplay=@autoplay controls=@controls loop="loop" muted="muted" lg-video-object="" lg-html5=""
-        source src=@work.path
+- works = works_for(@item)
+
+.outercontainer
+    .container
+        .label
+            .leftcorner
+                p.title
+                    strong =@item[:title]
+                p
+                    - if @item[:homepage]
+                        a href=@item[:homepage] target="_blank"
+                            =@item[:creator]
+                    - else
+                        =@item[:creator]
+                    | ,
+                    =< @item[:year]
+            .rightcorner
+                - if @item[:license]
+                    p ==@item[:license]
+                - if @item[:source]
+                    p: a href=@item[:source] target="_blank" Source
+            .body
+                == yield
+        .works
+            - works.each do |work|
+                - if image?(work)
+                    a.exhibit.image href=work.path
+                        == render "/work.*", work: work
+                - if video?(work)
+                    a.exhibit.video#video data-html="#video"
+                        == render "/work.*", work: work, autoplay: true
+
+- if next_exhibit(@item)
+    a#prev href=next_exhibit(@item).path
+        img src="/assets/icons/angle-left.svg"
+
+- if prev_exhibit(@item)
+    a#next href=prev_exhibit(@item).path
+        img src="/assets/icons/angle-right.svg"
