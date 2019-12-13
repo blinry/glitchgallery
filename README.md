@@ -1,7 +1,7 @@
 The Glitch Gallery
 ==================
 
-**To submit your artwork to the Glitch Gallery, please see <https://glitch-gallery.org/submit/>!**
+**To submit your artwork to the Glitch Gallery, please see <https://glitchgallery.org/submit/>!**
 
 To compile the site for yourself, you'll need a [Ruby](https://www.ruby-lang.org/) installation, as well as [Bundler](https://bundler.io/).
 

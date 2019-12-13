@@ -8,7 +8,7 @@ data_sources:
 deploy:
   default:
     kind: rsync
-    dst: "morr.cc:/web/glitch-gallery.org"
+    dst: "morr.cc:/web/glitchgallery.org"
     options: [
       '--group',
       '--links',
