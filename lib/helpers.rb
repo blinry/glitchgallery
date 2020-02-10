@@ -18,7 +18,7 @@ def works
 end
 
 def works_for exhibit
-    @items.find_all(exhibit.path+"*") - [exhibit]
+    @items.find_all(exhibit.identifier.to_s[0..-10]+"/*") - [exhibit]
 end
 
 def exhibit_for work

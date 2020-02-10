@@ -5,6 +5,13 @@ preprocess do
         if item[:submitted]
             item[:submitted] = DateTime.parse(item[:submitted].to_s)
         end
+
+        if item[:creator]
+            works = works_for(item)
+            if works.size >= 2
+                item[:title] = item[:title] + " (I-" + works.size.to_roman + ")"
+            end
+        end
     end
 end
 
