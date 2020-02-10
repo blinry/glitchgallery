@@ -126,6 +126,10 @@ header, footer {
             font-size: 1.5rem;
             margin: 1rem;
         }
+        img {
+            max-height: 2rem;
+            margin: 1rem;
+        }
     }
     nav {
         flex-grow: 9999;
@@ -199,6 +203,7 @@ main {
     padding: 2rem;
     background: url(/assets/images/wall.gif) repeat;
 
+
     .text {
         font-size: 1.3rem;
 
@@ -208,6 +213,11 @@ main {
         margin: 0 auto;
         margin-top: 2rem;
         margin-bottom: 2em;
+
+        img.title {
+            max-width: 40rem;
+            margin: 1rem auto;
+        }
 
         h2 {
             font-size: 1.6em;
