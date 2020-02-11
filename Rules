@@ -19,7 +19,7 @@ preprocess do
             if thumb
                 item[:thumbnail] = thumb.identifier
             else
-                item[:thumbnail] = "/assets/images/glitchgallery.png"
+                item[:thumbnail] = "/assets/images/preview.png"
             end
         end
     end

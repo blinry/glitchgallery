@@ -127,8 +127,10 @@ header, footer {
             margin: 1rem;
         }
         img {
+            position: relative;
             max-height: 2rem;
             margin: 1rem;
+            bottom: -0.3rem;
         }
     }
     nav {

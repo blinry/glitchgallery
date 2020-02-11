@@ -48,7 +48,7 @@ def title_for exhibit
 end
 
 def thumbnail_for exhibit
-    @items[item[:thumbnail]].reps[:thumbnail].path
+    @items[exhibit[:thumbnail]].reps[:thumbnail].path
 end
 
 def first_exhibit
