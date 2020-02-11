@@ -4,12 +4,11 @@ class Thumbnailize < Nanoc::Filter
 
     def run(filename, params={})
         system(
-            'inkscape',
-            filename,
-            '--export-area-page',
-            '--without-gui',
-            '--export-height='+params[:height].to_s,
-            '--export-png='+output_filename
+            'convert',
+            '-resize',
+            params[:height].to_s+"x"+params[:height].to_s+"^",
+            filename+"[0]", # to extract the first frame from gifs
+            "png:"+output_filename
         )
     end
 end

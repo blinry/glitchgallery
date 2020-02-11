@@ -11,6 +11,24 @@ html lang="en"
         link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i" rel="stylesheet"
         link href="/assets/images/favicon.ico" rel="shortcut icon"
 
+        - if @item[:creator]
+            meta name="author" content=@item[:creator]
+            meta name="date" content=@item[:submitted].strftime("%Y-%m-%d")
+            meta name="description" content=abstract_for(@item)
+
+            meta name="twitter:card" content="summary_large_image"
+            meta name="twitter:site" content="@glitchgallery"
+            meta name="twitter:title" content=title_for(@item)
+            meta name="twitter:description" content=abstract_for(@item)
+            meta name="twitter:creator" content=@item[:creator]
+            meta name="twitter:image" content=domain[0..-2]+thumbnail_for(@item)
+
+            meta property="og:title" content=title_for(@item)
+            meta property="og:type" content="website"
+            meta property="og:url" content=domain[0..-2]+@item.path
+            meta property="og:image" content=domain[0..-2]+thumbnail_for(@item)
+            meta property="og:description" content=abstract_for(@item)
+
     body
         header
             a href="/"

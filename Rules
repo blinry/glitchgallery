@@ -7,9 +7,19 @@ preprocess do
         end
 
         if item[:creator]
+            # Set title
             works = works_for(item)
             if works.size >= 2
-                item[:title] = item[:title] + " (I-" + works.size.to_roman + ")"
+                item[:title] = item[:title] + " I-" + works.size.to_roman
+            end
+
+            # Set thumbnail
+            dir = item.identifier.to_s.split("/")[0..-2].join("/")+"/"
+            thumb = @items[dir+"*.{png,jpg,jpeg,gif,svg,pdf,mp4,mkv,avi,webm}"]
+            if thumb
+                item[:thumbnail] = thumb.identifier
+            else
+                item[:thumbnail] = "/assets/images/glitchgallery.png"
             end
         end
     end
@@ -43,8 +53,13 @@ compile "/**/*.xml" do
     write item.identifier.without_ext + ".html"
 end
 
-compile "/**/*.{png,jpg,gif,svg}", :rep => :thumbnail do
-    filter :thumbnailize, :height => 200
+compile "/**/*.{png,jpg,jpeg,gif,svg}", :rep => :thumbnail do
+    filter :thumbnailize, :height => 400
+    write item.identifier + "-thumbnail.png"
+end
+
+compile "/**/*.{mp4,mkv,avi,webm}", :rep => :thumbnail do
+    filter :videothumbnailize, :height => 400
     write item.identifier + "-thumbnail.png"
 end
 

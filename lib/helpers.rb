@@ -34,6 +34,23 @@ def video? work
     work.path =~ /\.(mp4|mkv|avi|webm)/
 end
 
+def abstract_for exhibit
+    content = exhibit.raw_content.dup
+    content.gsub!(/!\[([^\]]*)\]\([^)]*\)/,"") # remove images
+    content.gsub!(/\[([^\]]*)\]\([^)]*\)/,"\\1") # replace links with link text
+    content.gsub!(/[*"]/,"") # remove italic and bold markers and quotations
+    content.strip!
+    abstract = content[/^[[:print:]]{20,256}[.…!?:*]/] || item[:title]
+end
+
+def title_for exhibit
+    "#{exhibit[:title]} (#{exhibit[:creator]}, #{exhibit[:year]})"
+end
+
+def thumbnail_for exhibit
+    @items[item[:thumbnail]].reps[:thumbnail].path
+end
+
 def first_exhibit
     exhibits.first
 end
