@@ -3,15 +3,26 @@ html lang="en"
     head
         meta charset="utf-8"
 
-        title =( + (@item.path == "/" ? "The Glitch Gallery" : @item[:title]))
-        link rel="stylesheet" href="/assets/css/style.css"
-        link rel="stylesheet" href="/assets/scripts/lightgallery/css/lightgallery.min.css"
-        meta name="viewport" content="width=device-width, initial-scale=0.7"
+        - if @item.path == "/"
+            title The Glitch Gallery
 
-        link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i" rel="stylesheet"
-        link href="/assets/images/favicon.ico" rel="shortcut icon"
+            meta name="description" content="An online exhibition of pretty software bugs, a museum of accidental art."
 
-        - if @item[:creator]
+            meta name="twitter:card" content="summary_large_image"
+            meta name="twitter:site" content="@glitchgallery"
+            meta name="twitter:title" content="The Glitch Gallery"
+            meta name="twitter:description" content="An online exhibition of pretty software bugs, a museum of accidental art."
+            meta name="twitter:creator" content="@blinry"
+            meta name="twitter:image" content="/assets/images/preview.png"
+
+            meta property="og:title" content="The Glitch Gallery"
+            meta property="og:type" content="website"
+            meta property="og:url" content=domain[0..-2]+@item.path
+            meta property="og:image" content="/assets/images/preview.png"
+            meta property="og:description" content="An online exhibition of pretty software bugs, a museum of accidental art."
+        - elsif @item[:creator]
+            title =title_for_exhibit(@item)
+
             meta name="author" content=@item[:creator]
             meta name="date" content=@item[:submitted].strftime("%Y-%m-%d")
             meta name="description" content=abstract_for(@item)
@@ -28,6 +39,15 @@ html lang="en"
             meta property="og:url" content=domain[0..-2]+@item.path
             meta property="og:image" content=domain[0..-2]+thumbnail_for(@item)
             meta property="og:description" content=abstract_for(@item)
+        - else
+            title =@item[:title]
+
+        link rel="stylesheet" href="/assets/css/style.css"
+        link rel="stylesheet" href="/assets/scripts/lightgallery/css/lightgallery.min.css"
+        meta name="viewport" content="width=device-width, initial-scale=0.7"
+
+        link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i" rel="stylesheet"
+        link href="/assets/images/favicon.ico" rel="shortcut icon"
 
     body
         header

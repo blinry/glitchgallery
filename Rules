@@ -7,12 +7,6 @@ preprocess do
         end
 
         if item[:creator]
-            # Set title
-            works = works_for(item)
-            if works.size >= 2
-                item[:title] = item[:title] + " I-" + works.size.to_roman
-            end
-
             # Set thumbnail
             dir = item.identifier.to_s.split("/")[0..-2].join("/")+"/"
             thumb = @items[dir+"*.{png,jpg,jpeg,gif,svg,pdf,mp4,mkv,avi,webm}"]

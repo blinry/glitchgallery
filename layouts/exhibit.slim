@@ -5,7 +5,7 @@
         .label
             .leftcorner
                 p.title
-                    strong =@item[:title]
+                    strong =title_for_exhibit(@item)
                 p
                     - if @item[:homepage]
                         a href=@item[:homepage] target="_blank"

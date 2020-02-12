@@ -43,8 +43,28 @@ def abstract_for exhibit
     abstract = content[/^[[:print:]]{20,256}[.…!?:*]/] || item[:title]
 end
 
+# Used in the Twitter card
 def title_for exhibit
     "\"#{exhibit[:title]}\" – #{exhibit[:creator]} (#{exhibit[:year]})"
+end
+
+def title_for_exhibit exhibit
+    works = works_for(exhibit)
+    if works.size == 1
+        exhibit[:title]
+    else
+        exhibit[:title] + " I-" + works.size.to_roman
+    end
+end
+
+def title_for_work work
+    exhibit = exhibit_for(work)
+    works = works_for(exhibit)
+    if works.size > 1
+        exhibit[:title] + " " + (works.index(work)+1).to_roman
+    else
+        exhibit[:title]
+    end
 end
 
 def thumbnail_for exhibit

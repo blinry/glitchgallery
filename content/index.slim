@@ -12,4 +12,5 @@ title: The Glitch Gallery
 
 .grid
     - exhibits.reverse.each do |exhibit|
-        == render "/tile.*", work: works_for(exhibit).first
+        - works_for(exhibit).each do |work|
+            == render "/tile.*", work: work

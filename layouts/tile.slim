@@ -11,7 +11,7 @@ a href=exhibit.path
                 .exhibit.image
                     == render "/work.*", work: @work, thumbnail: true
         p
-            strong =exhibit[:title]
+            strong =title_for_work(@work)
             br
             =exhibit[:creator]
             |,
