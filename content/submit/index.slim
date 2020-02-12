@@ -46,7 +46,7 @@ title: Submit an artwork
 
     - address = "curator@glitchgallery.org"
     - subject = "[Glitch Gallery] Submission"
-    - body = IO.read("content/template/index.md") + "\nDont' forget to attach your artwork!\n"
+    - body = IO.read("content/template/index.md") + "\nDont' forget to attach your artwork! (Or link to it, if it's hard to extract from a tweet, for example!)\n"
 
     p ==("<strong>Click <a href=\"mailto:#{address}?subject=#{url_encode(subject)}&body=#{url_encode(body)}\">this link</a> to open our template in your default mail client.</strong> If that doesn't work, please copy the template below into your mail client.")
 

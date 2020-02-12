@@ -18,7 +18,7 @@ def works
 end
 
 def works_for exhibit
-    @items.find_all(exhibit.identifier.to_s[0..-10]+"/*") - [exhibit]
+    @items.find_all(exhibit.identifier.to_s[0..-10]+"/*").sort_by{|w| w.identifier} - [exhibit]
 end
 
 def exhibit_for work
@@ -44,7 +44,7 @@ def abstract_for exhibit
 end
 
 def title_for exhibit
-    "#{exhibit[:title]} (#{exhibit[:creator]}, #{exhibit[:year]})"
+    "\"#{exhibit[:title]}\" – #{exhibit[:creator]} (#{exhibit[:year]})"
 end
 
 def thumbnail_for exhibit
