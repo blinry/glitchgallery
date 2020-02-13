@@ -24,12 +24,11 @@ a {
 }
 
 
-img {
-    display: block;
+img, video {
+    display: block !important;
 }
 
 /* HEADER */
-
 
 /*
 #breadcrumbs {
