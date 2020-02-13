@@ -1,8 +1,12 @@
-document.querySelectorAll(".grid video").forEach(function(video) {
-    video.onmouseenter = () => {
-        video.play()
+document.querySelectorAll(".item").forEach(function(item) {
+    item.onmouseenter = () => {
+        ;[...item.getElementsByTagName("video")].forEach(function(video) {
+            video.play()
+        })
     }
-    video.onmouseleave = () => {
-        video.pause()
+    item.onmouseleave = () => {
+        ;[...item.getElementsByTagName("video")].forEach(function(video) {
+            video.pause()
+        })
     }
 })
