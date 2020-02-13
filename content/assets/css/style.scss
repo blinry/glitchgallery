@@ -446,8 +446,12 @@ main {
             grid-template: auto auto / 1fr 7rem;
             grid-gap: 1em;
 
-            p {
+            p, ul, ol {
                 margin-bottom: 1em;
+            }
+
+            li {
+                margin-left: 1em;
             }
 
             .title {
