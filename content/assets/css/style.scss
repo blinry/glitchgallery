@@ -283,6 +283,10 @@ main {
              -1px 5px 2px -2px hsla(34, 36%, 27%, 0.6); /* brown shadow */
     }
 
+    .exhibit {
+        position: relative;
+    }
+
     .exhibit.image {
         background: white;
         box-shadow: -1px 1px 5px rgba(100, 100, 100, 0.2), /* surrounding */
@@ -299,6 +303,15 @@ main {
             -1px 1px 10px 15px rgba(100, 100, 100, 0.2), /* surrounding */
             0px 10px 7px 14px hsla(34, 36%, 27%, 0.6), /* brown shadow */
             -2px 30px 15px 10px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
+    }
+
+    .buttons {
+        position: absolute;
+        bottom: -24px;
+        right: 20px;
+        color: #c8ffbf;
+        text-shadow: 0 0 10px #fff;
+        white-space: pre;
     }
 
     .grid {
@@ -333,6 +346,11 @@ main {
                         -1px 1px 10px 10px rgba(100, 100, 100, 0.2), /* surrounding */
                         0px 10px 7px 9px hsla(34, 36%, 27%, 0.6), /* brown shadow */
                         -2px 30px 15px 5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
+                }
+                .buttons {
+                    font-size: 0.7em;
+                    bottom: -17px;
+                    right: 15px;
                 }
                 img.icon {
                     position: absolute;
