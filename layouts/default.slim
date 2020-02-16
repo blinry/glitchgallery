@@ -6,20 +6,20 @@ html lang="en"
         - if @item.path == "/"
             title The Glitch Gallery
 
-            meta name="description" content="An online exhibition of pretty software bugs, a museum of accidental art."
+            meta name="description" content="An online exhibition of pretty software bugs, a museum of accidental art. Open for submissions!"
 
             meta name="twitter:card" content="summary_large_image"
             meta name="twitter:site" content="@glitchgallery"
             meta name="twitter:title" content="The Glitch Gallery"
-            meta name="twitter:description" content="An online exhibition of pretty software bugs, a museum of accidental art."
+            meta name="twitter:description" content="An online exhibition of pretty software bugs, a museum of accidental art. Open for submissions!"
             meta name="twitter:creator" content="@blinry"
-            meta name="twitter:image" content="/assets/images/preview.png"
+            meta name="twitter:image" content=domain+"assets/images/preview.png"
 
             meta property="og:title" content="The Glitch Gallery"
             meta property="og:type" content="website"
             meta property="og:url" content=domain[0..-2]+@item.path
-            meta property="og:image" content="/assets/images/preview.png"
-            meta property="og:description" content="An online exhibition of pretty software bugs, a museum of accidental art."
+            meta property="og:image" content=domain+"assets/images/preview.png"
+            meta property="og:description" content="An online exhibition of pretty software bugs, a museum of accidental art. Open for submissions!"
         - elsif @item[:creator]
             title =title_for_exhibit(@item)
 
@@ -66,9 +66,19 @@ html lang="en"
         footer
             nav
                 a href="/terms/" class=(@item.path == "/terms/" ? "active" : "") Terms of use
-                a href="/contact/" class=(@item.path == "/contact/" ? "active" : "") Contact
-                a href="https://twitter.com/glitchgallery" Twitter
-                a href="https://github.com/blinry/glitchgallery" GitHub
+                a href="https://twitter.com/glitchgallery"
+                    img src="/assets/icons/twitter.svg" alt="Twitter logo" title="Twitter"
+                a href="https://botsin.space/@glitchgallery"
+                    img src="/assets/icons/mastodon.svg" alt="Mastodon logo" title="Mastodon"
+                a href="/contact/"
+                    img src="/assets/icons/envelope.svg" alt="envelope logo" title="Contact"
+                a href="https://github.com/blinry/glitchgallery"
+                    img src="/assets/icons/github.svg" alt="GitHub logo" title="GitHub"
+                a href="https://patreon.com/blinry"
+                    img src="/assets/icons/patreon.svg" alt="Patreon logo" title="Patreon"
+                a href="/feed/"
+                    img src="/assets/icons/rss.svg" alt="feed logo" title="Feed"
+
         script src="/assets/scripts/mouseover.js"
         script src="/assets/scripts/lightgallery/js/lightgallery.min.js"
         script src="/assets/scripts/lightgallery/lg-video.js"
