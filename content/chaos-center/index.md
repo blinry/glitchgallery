@@ -2,7 +2,7 @@
 title: Chaos Center
 creator: Laura Klünder
 year: 2017
-license: CC0
+license: CC0 1.0
 submitted: 2020-02-11
 ---
 

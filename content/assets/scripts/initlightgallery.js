@@ -1,1 +1,3 @@
-lightGallery(document.querySelector(".works"))
+;[...document.querySelectorAll(".works")].forEach(works => {
+    lightGallery(works)
+})

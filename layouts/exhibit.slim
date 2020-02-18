@@ -4,7 +4,7 @@
     .container
         .label
             .leftcorner
-                p.title
+                a.title href=@item.path
                     strong =title_for_exhibit(@item)
                 p
                     - if @item[:homepage]
@@ -29,11 +29,3 @@
                 - if video?(work)
                     a.exhibit.video#video data-html="#video"
                         == render "/work.*", work: work, autoplay: true
-
-- if next_exhibit(@item)
-    a#prev href=next_exhibit(@item).path
-        img src="/assets/icons/angle-left.svg"
-
-- if prev_exhibit(@item)
-    a#next href=prev_exhibit(@item).path
-        img src="/assets/icons/angle-right.svg"

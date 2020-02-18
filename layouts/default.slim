@@ -61,6 +61,13 @@ html lang="en"
             - if @item[:creator]
                 == render "/exhibit.*" do
                     == yield
+                - if next_exhibit(@item)
+                    a#prev href=next_exhibit(@item).path
+                        img src="/assets/icons/angle-left.svg"
+
+                - if prev_exhibit(@item)
+                    a#next href=prev_exhibit(@item).path
+                        img src="/assets/icons/angle-right.svg"
             - else
                 == yield
         footer

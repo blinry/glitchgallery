@@ -3,7 +3,7 @@ title: Luchador
 creator: 2DArray
 homepage: https://demoman.net
 year: 2018
-license: CC0
+license: CC0 1.0
 submitted: 2020-02-11
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: melting a e s t h e t i c
+title: melting a e s t h e t i c
 creator: Erty Seidohl
 homepage: https://organicdonut.com
 year: 2018

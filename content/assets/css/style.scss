@@ -224,6 +224,7 @@ main {
         img.title {
             max-width: 40rem;
             margin: 1rem auto;
+            display: block;
         }
 
         h2 {
@@ -468,6 +469,10 @@ main {
                 line-height: 100%;
             }
 
+            .title, .title:hover {
+                color: black;
+            }
+
             .rightcorner, .leftcorner {
                 p {
                     margin-bottom: 0;
@@ -490,6 +495,10 @@ main {
             }
         }
     }
+}
+
+.outercontainer + .outercontainer, .grid + .outercontainer {
+    margin-top: 10rem;
 }
 
 .mute {
