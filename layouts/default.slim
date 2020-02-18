@@ -54,8 +54,8 @@ html lang="en"
             a href="/"
                 img src="/assets/images/glitchgallery.svg"
             nav
-                a href="/about/" class=(@item.path == "/about/" ? "active" : "") About us
-                a href="/support/" class=(@item.path == "/support/" ? "active" : "") Become a member
+                a href="/about/" class=(@item.path == "/about/" ? "active" : "") About
+                a href="/support/" class=(@item.path == "/support/" ? "active" : "") Support us
                 a.button href="/submit/" class=(@item.path == "/submit/" ? "active" : "")  Submit an artwork
         main
             - if @item[:creator]
