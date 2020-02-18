@@ -8,4 +8,4 @@ submitted: 2020-02-13
 source: https://www.youtube.com/watch?v=70ylCi4xVko
 ---
 
-"This has a similar origin to [Icosahedral Flower](/icosahedral-flower/), but with some spherical projection. I think the projection center was at the origin, or at the corner of each triangle, when it was meant to be somewhere else - not sure though!"
+This has a similar origin to [Icosahedral Flower](/icosahedral-flower/), but with some spherical projection. I think the projection center was at the origin, or at the corner of each triangle, when it was meant to be somewhere else - not sure though!
