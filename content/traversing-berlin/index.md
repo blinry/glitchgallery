@@ -3,7 +3,7 @@ title: Traversing Berlin
 creator: Daniela Berger
 year: 2018
 license: CC BY-SA 4.0
-submitted: 2019-01-04
+published: 2019-01-04
 ---
 
 I wanted to use the [GTFS data of the public transport association VBB](https://daten.berlin.de/datensaetze/vbb-fahrplandaten-gtfs) to create art about the Berlin public transport system.

@@ -2,7 +2,6 @@
 title: Out of Space in Outer Space
 creator: Lena Schimmel & TBD
 year: 2006
-submitted: 2018-12-20
 ---
 
 These are images of a 3D simulation of the Voyager I and II space probes.

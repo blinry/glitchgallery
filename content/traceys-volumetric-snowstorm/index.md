@@ -4,7 +4,7 @@ creator: Kirstin "Kiki" Rohwer
 homepage: https://metakiki.net
 year: 2020
 license: CC BY 4.0
-submitted: 2020-02-13
+published: 2020-02-13
 ---
 
 This image was created while working on extensions for the raytracing 

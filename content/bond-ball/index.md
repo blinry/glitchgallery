@@ -4,7 +4,7 @@ creator: Hamish Todd
 homepage: http://hamishtodd1.github.io
 year: 2017
 license: CC0 1.0
-submitted: 2020-02-13
+published: 2020-02-13
 ---
 
 This was when I was first making a 3D model of a molecule, to go into the software that is my PhD project. What's happenning here is simple to explain: you *should* be seeing a few hundred spheres, most of which are connected to each other with cylinders. For atoms A and B, the way I was programming those connective cylinders was:

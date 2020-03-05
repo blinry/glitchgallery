@@ -4,7 +4,7 @@ creator: Erty Seidohl
 homepage: https://organicdonut.com
 year: 2018
 license: CC BY 4.0
-submitted: 2020-02-16
+published: 2020-02-16
 source: https://organicdonut.com/2018/01/aesthetic-generator/
 ---
 

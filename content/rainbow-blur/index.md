@@ -3,8 +3,7 @@ title: Rainbow Blur
 creator: polyfloyd
 homepage: https://polyfloyd.net
 year: 2014
-nolicense: CC BY 4.0
-submitted: 2020-02-18
+license: CC BY 4.0
 ---
 
 When bored with my current screen saver at one time in 2014, I thought it would

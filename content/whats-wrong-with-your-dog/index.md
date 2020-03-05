@@ -2,8 +2,6 @@
 title: What's wrong with your dog?
 creator: anonymous
 year: 2007
-nolicense: unknown
-submitted: 2020-02-18
 ---
 
 On Jan 30th 2014, an anonymous user of an online image board complained that

@@ -3,8 +3,7 @@ title: Wait, how big is an int?
 creator: polyfloyd
 homepage: https://polyfloyd.net
 year: 2014
-nolicense: CC BY 4.0
-submitted: 2018-02-18
+license: CC BY 4.0
 ---
 
 After teaching myself the Go programming language in the year prior, I thought

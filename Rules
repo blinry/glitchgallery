@@ -2,8 +2,8 @@
 
 preprocess do
     @items.each do |item|
-        if item[:submitted]
-            item[:submitted] = DateTime.parse(item[:submitted].to_s)
+        if item[:published]
+            item[:published] = DateTime.parse(item[:published].to_s)
         end
 
         if item[:creator]

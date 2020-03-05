@@ -24,7 +24,6 @@ html lang="en"
             title =title_for_exhibit(@item)
 
             meta name="author" content=@item[:creator]
-            meta name="date" content=@item[:submitted].strftime("%Y-%m-%d")
             meta name="description" content=abstract_for(@item)
 
             meta name="twitter:card" content="summary_large_image"
@@ -41,6 +40,9 @@ html lang="en"
             meta property="og:description" content=abstract_for(@item)
         - else
             title =@item[:title]
+
+        - if @item[:published]
+            meta name="date" content=@item[:published].strftime("%Y-%m-%d")
 
         link rel="stylesheet" href="/assets/css/style.css"
         link rel="stylesheet" href="/assets/scripts/lightgallery/css/lightgallery.min.css"

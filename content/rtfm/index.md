@@ -3,8 +3,7 @@ title: Read the f*cking manual!
 creator: lujoga
 homepage: https://luj0ga.de
 year: 2019
-nolicense: CC0 1.0
-submitted: 2020-02-20
+license: CC0 1.0
 ---
 
 When I was hacking a little scanline rasteriser in C, the resulting image wasn't quite the rendering of the famous Blender mascot I expected.

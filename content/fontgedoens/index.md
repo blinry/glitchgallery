@@ -3,8 +3,7 @@ title: fontgedoens
 creator: pesco
 homepage: https://www.khjk.org
 year: 2008
-nolicense: CC BY 4.0
-submitted: 2020-02-18
+license: CC BY 4.0
 ---
 
 It was supposed to become a text editor or something, but primarily I

@@ -3,8 +3,15 @@ title: The Glitch Gallery
 ---
 
 .text
-    h2 These exhibits are not public. Yet!
+    h2 These exhibits are ready to be made public:
 
 .grid
-    - hidden_exhibits.reverse.each do |exhibit|
+    - hidden_exhibits.reverse.select{|w| w[:license] }.each do |exhibit|
+        ==render "/tile.*", work: works_for(exhibit).first
+
+.text
+    h2 These exhibits do not have a license yet:
+
+.grid
+    - hidden_exhibits.reverse.select{|w| not w[:license] }.each do |exhibit|
         ==render "/tile.*", work: works_for(exhibit).first

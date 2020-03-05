@@ -3,8 +3,7 @@ title: The Longest Noise
 creator: lastfuture
 homepage: https://www.lastfuture.de
 year: 2017
-nolicense: CC0 1.0
-submitted: 2020-02-18
+license: CC0 1.0
 ---
 
 This happened when I was experimenting with a combination of 3D rendering and Slit Scanning. My goal was to create smooth surreally warping shapes by re-mapping the x-axis to the time axis and the time axis to the x-axis. Unfortunately I found out the hard way that when you do not randomize everything properly Blender animations rendered in Cycles will have nearly the same image noise in subsequent frames. Since time is represented on the x-axis in my video result this ended up having very long horizontal stripes of noise.

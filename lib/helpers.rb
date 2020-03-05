@@ -6,7 +6,7 @@ def domain
 end
 
 def exhibits
-    @items.select{|i| i[:submitted] and i[:license] and not works_for(i).empty?}.sort_by{|e| e[:submitted]}
+    @items.select{|i| i[:published] and i[:license] and not works_for(i).empty?}.sort_by{|e| e[:published]}
 end
 
 def hidden_exhibits
