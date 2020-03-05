@@ -3,7 +3,7 @@ title: "#art"
 creator: Kofi Gumbs
 homepage: https://kofi.sexy
 year: 2019
-license: CC0 1.0
+nolicense: CC0 1.0
 submitted: 2020-03-01
 
 ---

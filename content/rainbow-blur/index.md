@@ -3,7 +3,7 @@ title: Rainbow Blur
 creator: polyfloyd
 homepage: https://polyfloyd.net
 year: 2014
-license: CC BY 4.0
+nolicense: CC BY 4.0
 submitted: 2020-02-18
 ---
 

@@ -3,7 +3,7 @@ title: Read the f*cking manual!
 creator: lujoga
 homepage: https://luj0ga.de
 year: 2019
-license: CC0 1.0
+nolicense: CC0 1.0
 submitted: 2020-02-20
 ---
 
