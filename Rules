@@ -48,8 +48,10 @@ compile "/**/*.xml" do
 end
 
 compile "/**/*.{png,jpg,jpeg,gif,svg}", :rep => :thumbnail do
-    filter :thumbnailize, :height => 400
-    write item.identifier + "-thumbnail.png"
+    unless item.identifier.to_s =~ /^\/assets\/scripts\//
+        filter :thumbnailize, :height => 400
+        write item.identifier + "-thumbnail.png"
+    end
 end
 
 compile "/**/*.{mp4,mkv,avi,webm}", :rep => :thumbnail do
