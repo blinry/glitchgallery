@@ -9,7 +9,7 @@ preprocess do
         if item[:creator]
             # Set thumbnail
             dir = item.identifier.to_s.split("/")[0..-2].join("/")+"/"
-            thumb = @items[dir+"*.{png,jpg,jpeg,gif,svg,pdf,mp4,mkv,avi,webm}"]
+            thumb = @items[dir+"*.{png,jpg,jpeg,gif,svg,pdf,mp4,mkv,avi,webm,mov}"]
             if thumb
                 item[:thumbnail] = thumb.identifier
             else
@@ -54,7 +54,7 @@ compile "/**/*.{png,jpg,jpeg,gif,svg}", :rep => :thumbnail do
     end
 end
 
-compile "/**/*.{mp4,mkv,avi,webm}", :rep => :thumbnail do
+compile "/**/*.{mp4,mkv,avi,webm,mov}", :rep => :thumbnail do
     filter :videothumbnailize, :height => 400
     write item.identifier + "-thumbnail.png"
 end

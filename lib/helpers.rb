@@ -31,7 +31,7 @@ def image? work
 end
 
 def video? work
-    work.path =~ /\.(mp4|mkv|avi|webm)/
+    work.path =~ /\.(mp4|mkv|avi|webm|mov)/
 end
 
 def abstract_for exhibit
