@@ -3,6 +3,7 @@ title: Can We See Now?
 creator: Brian Davis
 year: 2018
 license: CC0 1.0
+published: 2020-03-06
 ---
 
 I was attempting to create an efficient approximation for a line-of-sight

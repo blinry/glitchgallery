@@ -4,6 +4,7 @@ creator: polyfloyd
 homepage: https://polyfloyd.net
 year: 2014
 license: CC BY 4.0
+published: 2020-03-05
 ---
 
 When bored with my current screen saver at one time in 2014, I thought it would
