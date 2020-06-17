@@ -1,5 +1,5 @@
 ---
-title: "#art"
+title: Moment before the infinite loop
 creator: Kofi Gumbs
 homepage: https://kofi.sexy
 year: 2019
