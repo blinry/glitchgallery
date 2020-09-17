@@ -1,5 +1,5 @@
 ---
-title: Screen Space Voxelization
+title: Camera Space Voxelization
 creator: Matthias Moulin
 homepage: https://matt77hias.github.io/
 year: 2018
