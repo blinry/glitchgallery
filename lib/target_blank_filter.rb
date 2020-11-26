@@ -3,7 +3,7 @@ class AbsolutizePathsFilter < Nanoc::Filter
     type :text
 
     def run(content, params={})
-        content.gsub(/\]\(([^\/].+?)\)/) do
+        content.gsub(/\]\(([^\/][^)]+?)\)/) do
             if $1.include?'://'
                 "](#{$1}){:target=\"_blank\"}"
             else
