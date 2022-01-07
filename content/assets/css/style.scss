@@ -319,6 +319,11 @@ main {
         flex-wrap: wrap;
         justify-content: center;
 
+        a {
+            display: flex;
+            align-items: flex-end;
+        }
+
         .item {
             max-width: 19rem;
             padding: 1rem;
@@ -353,7 +358,8 @@ main {
                     max-height: 3rem;
                 }
                 img, video {
-                    height: 10rem;
+                    max-height: 10rem;
+                    max-width: 100%;
                     display: table-cell;
                 }
             }
