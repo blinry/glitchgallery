@@ -3,6 +3,7 @@ title: Mountains of Sierpnonski
 creator: Ithea Piko Nwawa
 year: 2022
 license: CC BY-SA 4.0
+published: 2022-07-29
 ---
 
 The artist was trying to hack together a simple solution for a programming exercise: Making a Sierpinski triangle in Python with the Turtle Module. They missed one line of code, and it took some time to find the problem. The exact problem is a missing turn at the end of each cycle.
