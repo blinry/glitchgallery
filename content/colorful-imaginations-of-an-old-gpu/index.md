@@ -3,7 +3,7 @@ title: Colorful Imaginations of an Old Graphics Processing Unit
 creator: Error
 homepage: https://undefinedbehavior.de/
 year: 2022
-license: CC BY 4.0
+license: CC0 1.0
 ---
 
 This artwork was created by a 9 years old GPU as its swan song.
