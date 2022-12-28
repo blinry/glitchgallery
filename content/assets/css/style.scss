@@ -3,24 +3,25 @@ $textlink: #44c;
 
 /* APPLICATION */
 
-*, body {
-    margin: 0;
-    padding: 0;
-    font-family: Nunito, sans-serif;
-    //border: 0.1px solid black;
-    font-size: inherit;
+*,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Nunito, sans-serif;
+  //border: 0.1px solid black;
+  font-size: inherit;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: scroll;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 /* HEADER */
@@ -40,509 +41,522 @@ a {
 */
 
 #breadcrumbs {
-    background: #e7e7e7;
+  background: #e7e7e7;
 
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-    a {
-        padding: 0.5rem 0.5rem 0.5rem 2rem;
-        position: relative;
+  a {
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    position: relative;
 
-        &:nth-child(1) {
-            background: hsla(239, 0%, 70%, 1);
-            padding-left: 1rem;
-            &:after {
-                border-left-color: hsla(239, 0%, 70%, 1);
-            }
-        }
-        &:nth-child(2) {
-            background: hsla(239, 0%, 75%, 1);
-            &:after {
-                border-left-color: hsla(239, 0%, 75%, 1);
-            }
-        }
-        &:nth-child(3) {
-            background: hsla(239, 0%, 83%, 1);
-            &:after {
-                border-left-color: hsla(239, 0%, 83%, 1);
-            }
-        }
-
-        &:nth-child(4) {
-            background: hsla(239, 0%, 90%, 1);
-            &:after {
-                border-left-color: hsla(239, 0%, 90%, 1);
-            }
-        }
-
-        &:after {
-            content: " ";
-            display: block;
-            width: 0;
-            height: 0;
-            border-top: 1.2rem solid transparent;
-            border-bottom: 1.2rem solid transparent;
-            border-left: 10px solid transparent;
-            position: absolute;
-            top: 50%;
-            margin-top: -1.2rem;
-            left: 100%;
-            z-index: 2;
-        }
-
-        &:hover {
-            color: white;
-            background: grey;
-        }
-
-        &:hover:after {
-            border-left-color: grey;
-        }
-
+    &:nth-child(1) {
+      background: hsla(239, 0%, 70%, 1);
+      padding-left: 1rem;
+      &:after {
+        border-left-color: hsla(239, 0%, 70%, 1);
+      }
     }
+    &:nth-child(2) {
+      background: hsla(239, 0%, 75%, 1);
+      &:after {
+        border-left-color: hsla(239, 0%, 75%, 1);
+      }
+    }
+    &:nth-child(3) {
+      background: hsla(239, 0%, 83%, 1);
+      &:after {
+        border-left-color: hsla(239, 0%, 83%, 1);
+      }
+    }
+
+    &:nth-child(4) {
+      background: hsla(239, 0%, 90%, 1);
+      &:after {
+        border-left-color: hsla(239, 0%, 90%, 1);
+      }
+    }
+
+    &:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 1.2rem solid transparent;
+      border-bottom: 1.2rem solid transparent;
+      border-left: 10px solid transparent;
+      position: absolute;
+      top: 50%;
+      margin-top: -1.2rem;
+      left: 100%;
+      z-index: 2;
+    }
+
+    &:hover {
+      color: white;
+      background: grey;
+    }
+
+    &:hover:after {
+      border-left-color: grey;
+    }
+  }
 }
 
-header, footer {
-    background: #eee;
+header,
+footer {
+  background: #eee;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  h1:hover,
+  a:hover:not(.active) {
+    color: $museumblue;
+  }
+
+  > a {
+    flex-grow: 1;
+    text-align: center;
+    h1 {
+      font-size: 1.5rem;
+      margin: 1rem;
+    }
+    img {
+      position: relative;
+      max-height: 2rem;
+      margin: 1rem;
+      bottom: -0.3rem;
+    }
+  }
+  nav {
+    flex-grow: 9999;
 
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-
-    h1:hover, a:hover:not(.active) {
-        color: $museumblue;
+    align-items: baseline;
+    a {
+      padding: 0.5rem 1.5rem;
     }
-
-    > a {
-        flex-grow: 1;
-        text-align: center;
-        h1 {
-            font-size: 1.5rem;
-            margin: 1rem;
-        }
-        img {
-            position: relative;
-            max-height: 2rem;
-            margin: 1rem;
-            bottom: -0.3rem;
-        }
+    a.active:not(.button) {
+      background: #ddd;
     }
-    nav {
-        flex-grow: 9999;
-
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        align-items: baseline;
-        a {
-            padding: 0.5rem 1.5rem;
-        }
-        a.active:not(.button) {
-            background: #ddd;
-        }
-        .button {
-            color: white !important;
-            background: $museumblue;
-            padding: 0.5rem 1rem;
-            margin: 1rem;
-            margin-left: auto;
-        }
+    .button {
+      color: white !important;
+      background: $museumblue;
+      padding: 0.5rem 1rem;
+      margin: 1rem;
+      margin-left: auto;
     }
+  }
 }
 
 header {
-    z-index: 2;
+  z-index: 2;
 }
 
 footer a {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
-footer, #breadcrumbs {
-    z-index: 1;
+footer,
+#breadcrumbs {
+  z-index: 1;
 }
 
-footer, header, #breadcrumbs {
-    box-shadow: 1px 1px 20px rgba(100, 100, 100, 20%);
+footer,
+header,
+#breadcrumbs {
+  box-shadow: 1px 1px 20px rgba(100, 100, 100, 20%);
 }
 
 footer img {
-    height: 1.2em;
-    position: relative;
-    top: 0.2em;
+  height: 1.2em;
+  position: relative;
+  top: 0.2em;
 }
 
 footer a:hover img {
-    transform: scale(1.2, 1.2);
-    transition: all 0.05s ease-in-out;
+  transform: scale(1.2, 1.2);
+  transition: all 0.05s ease-in-out;
 }
 
 /* https://ianlunn.github.io/Hover/ */
 
 .button {
-    display: inline-block;
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    position: relative;
-    &:before {
-        content: '';
-        position: absolute;
-        border: $museumblue solid 4px;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transition-duration: 0.3s;
-        transition-property: top, right, bottom, left;
-    }
-    &:hover:before, &:focus:before, &:active:before, &.active:before {
-        top: -8px;
-        right: -8px;
-        bottom: -8px;
-        left: -8px;
-    }
+  display: inline-block;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    border: $museumblue solid 4px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition-duration: 0.3s;
+    transition-property: top, right, bottom, left;
+  }
+  &:hover:before,
+  &:focus:before,
+  &:active:before,
+  &.active:before {
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+  }
 }
 
 /* MAIN */
 
 main {
-    flex: 1;
-    padding: 2rem;
-    background: url(/assets/images/wall.gif) repeat;
+  flex: 1;
+  padding: 2rem;
+  background: url(/assets/images/wall.gif) repeat;
 
+  .text {
+    font-size: 1.3rem;
 
-    .text {
-        font-size: 1.3rem;
+    max-width: 50rem;
+    text-align: left;
+    padding: 1em;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2em;
 
-        max-width: 50rem;
-        text-align: left;
+    img.title {
+      max-width: 40rem;
+      margin: 1rem auto;
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.6em;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    li {
+      margin-left: 1em;
+    }
+    a {
+      color: $textlink;
+    }
+    a:hover {
+      color: $museumblue;
+    }
+    img {
+      width: 100%;
+    }
+    pre code {
+      color: white;
+      background: #333;
+      display: block;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      box-shadow: inset 0 0 1px 2px #ccc, inset 0 0 20px 5px rgba(0, 0, 0, 1);
+    }
+    .mail {
+      margin-top: 3rem;
+      pre {
+        white-space: pre-wrap;
+        background: white;
         padding: 1em;
-        margin: 0 auto;
-        margin-top: 2rem;
-        margin-bottom: 2em;
+        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.5);
+      }
+    }
+    .columns {
+      display: flex;
 
-        img.title {
-            max-width: 40rem;
-            margin: 1rem auto;
-            display: block;
-        }
+      .left {
+        flex: 1;
+        padding-right: 2rem;
+        padding-top: 0.5rem;
+      }
 
-        h2 {
-            font-size: 1.6em;
-            margin-bottom: 1rem;
-            margin-top: 1rem;
-        }
-        p {
-            margin-bottom: 1rem;
-        }
-        li {
-            margin-left: 1em;
-        }
-        a {
-            color: $textlink;
-        }
-        a:hover {
-            color: $museumblue;
-        }
-        img {
-            width: 100%;
-        }
-        pre code {
-            color: white;
-            background: #333;
-            display: block;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            box-shadow: inset 0 0 1px 2px #ccc,
-                inset 0 0 20px 5px rgba(0, 0, 0, 1);
-        }
-        .mail {
-            margin-top: 3rem;
-            pre {
-                white-space: pre-wrap;
-                background: white;
-                padding: 1em;
-                box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.5);
-            }
-        }
-        .columns {
-            display: flex;
+      .right {
+        flex: 3;
+      }
 
-            .left {
-                flex: 1;
-                padding-right: 2rem;
-                padding-top: 0.5rem;
-            }
+      img {
+      }
+    }
+  }
 
-            .right {
-                flex: 3;
-            }
+  .label,
+  .text {
+    background: #f5f5f5;
+    box-shadow: 1px -2px 2px rgba(255, 255, 255, 1),
+      /* white */ -1px 1px 5px rgba(100, 100, 100, 0.5),
+      /* surrounding */ -1px 5px 2px -2px hsla(34, 36%, 27%, 0.6); /* brown shadow */
+  }
 
-            img {
-            }
-        }
+  .exhibit.image {
+    background: white;
+    box-shadow: -1px 1px 5px rgba(100, 100, 100, 0.2),
+      /* surrounding */ -1px 3px 10px 2px hsla(42, 20%, 15%, 0.2),
+      /* side shadow */ 0px 10px 7px -1px hsla(34, 36%, 27%, 0.6),
+      /* brown shadow */ -2px 30px 15px -5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
+    img {
+      display: block !important;
+    }
+  }
+
+  .exhibit.video {
+    background: white;
+    box-shadow: 0px 1px 1px 1px #666, /* inner highlight */ 0 0 0 15px #222,
+      /* frame */ 0px -1px 1px 15px #666,
+      /* top highlight */ -1px 1px 10px 15px rgba(100, 100, 100, 0.2),
+      /* surrounding */ 0px 10px 7px 14px hsla(34, 36%, 27%, 0.6),
+      /* brown shadow */ -2px 30px 15px 10px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
+    video {
+      display: block !important;
+    }
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a {
+      display: flex;
+      align-items: flex-end;
     }
 
-    .label, .text {
-        background: #f5f5f5;
-        box-shadow: 1px -2px 2px rgba(255, 255, 255, 1), /* white */
-        -1px 1px 5px rgba(100, 100, 100, 0.5), /* surrounding */
-             -1px 5px 2px -2px hsla(34, 36%, 27%, 0.6); /* brown shadow */
-    }
+    .item {
+      max-width: 19rem;
+      padding: 1rem;
+      margin: 1rem;
 
-    .exhibit.image {
-        background: white;
-        box-shadow: -1px 1px 5px rgba(100, 100, 100, 0.2), /* surrounding */
-             -1px 3px 10px 2px hsla(42, 20%, 15%, 0.2), /* side shadow */
-             0px 10px 7px -1px hsla(34, 36%, 27%, 0.6), /* brown shadow */
-             -2px 30px 15px -5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
-        img {
-            display: block !important;
-        }
-    }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-    .exhibit.video {
-        background: white;
-        box-shadow: 0px 1px 1px 1px #666, /* inner highlight */
-            0 0 0 15px #222, /* frame */
-            0px -1px 1px 15px #666, /* top highlight */
-            -1px 1px 10px 15px rgba(100, 100, 100, 0.2), /* surrounding */
-            0px 10px 7px 14px hsla(34, 36%, 27%, 0.6), /* brown shadow */
-            -2px 30px 15px 10px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
-        video {
-            display: block !important;
-        }
-    }
-
-    .grid {
+      .cover {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-
-        a {
-            display: flex;
-            align-items: flex-end;
+        align-items: center;
+        positon: relative;
+        .exhibit {
+          max-width: 100%;
+          max-height: 100%;
+          width: auto;
+          transition: all 0.15s ease-in-out;
         }
-
-        .item {
-            max-width: 19rem;
-            padding: 1rem;
-            margin: 1rem;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            .cover {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                positon: relative;
-                .exhibit {
-                    max-width: 100%;
-                    max-height: 100%;
-                    width: auto;
-                    transition: all 0.15s ease-in-out;
-                }
-                .exhibit.video {
-                    box-shadow: 0px 1px 1px 1px #666, /* inner highlight */
-                        0 0 0 10px #222, /* frame */
-                        0px -1px 1px 10px #666, /* top highlight */
-                        -1px 1px 10px 10px rgba(100, 100, 100, 0.2), /* surrounding */
-                        0px 10px 7px 9px hsla(34, 36%, 27%, 0.6), /* brown shadow */
-                        -2px 30px 15px 5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
-                }
-                img.icon {
-                    position: absolute;
-                    max-width: 3rem;
-                    max-height: 3rem;
-                }
-                img, video {
-                    max-height: 10rem;
-                    max-width: 100%;
-                    display: table-cell;
-                }
-            }
-
-
-            h2 {
-                font-size: 1.5rem;
-                margin-top: 2rem;
-                margin-bottom: 0.5rem;
-            }
-
-            > a {
-                color: blue;
-            }
-
-            > a:hover {
-                color: $museumblue;
-            }
-
-            p {
-                margin-top: 1.5rem;
-            }
-
+        .exhibit.video {
+          box-shadow: 0px 1px 1px 1px #666,
+            /* inner highlight */ 0 0 0 10px #222,
+            /* frame */ 0px -1px 1px 10px #666,
+            /* top highlight */ -1px 1px 10px 10px rgba(100, 100, 100, 0.2),
+            /* surrounding */ 0px 10px 7px 9px hsla(34, 36%, 27%, 0.6),
+            /* brown shadow */ -2px 30px 15px 5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
         }
-        .item:hover {
-            .exhibit {
-                transform: scale(1.1, 1.1);
-            }
-            .exhibit.image {
-                background: white;
-                box-shadow: -1px 1px 5px -10px rgba(100, 100, 100, 0.2), /* surrounding */
-                     -1px 3px 20px -10px hsla(42, 20%, 15%, 0.2), /* side shadow */
-                     0px 5px 7px -1px hsla(34, 36%, 27%, 0.6), /* brown shadow */
-                     -2px 20px 15px -5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
-            }
-            .exhibit.video {
-                box-shadow: 0px 1px 1px 1px #666, /* inner highlight */
-                    0 0 0 10px #222, /* frame */
-                    0px -1px 1px 10px #666, /* top highlight */
-                    -1px 1px 10px 5px rgba(100, 100, 100, 0.2), /* surrounding */
-                    0px 5px 7px 9px hsla(34, 36%, 27%, 0.6), /* brown shadow */
-                    -2px 20px 15px -5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
-            }
-            img.icon {
-                display: none !important;
-            }
+        img.icon {
+          position: absolute;
+          max-width: 3rem;
+          max-height: 3rem;
         }
+        img,
+        video {
+          max-height: 10rem;
+          max-width: 100%;
+          display: table-cell;
+        }
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      > a {
+        color: blue;
+      }
+
+      > a:hover {
+        color: $museumblue;
+      }
+
+      p {
+        margin-top: 1.5rem;
+      }
     }
-
-    #nope {
-        display: none;
+    .item:hover {
+      .exhibit {
+        transform: scale(1.1, 1.1);
+      }
+      .exhibit.image {
+        background: white;
+        box-shadow: -1px 1px 5px -10px rgba(100, 100, 100, 0.2),
+          /* surrounding */ -1px 3px 20px -10px hsla(42, 20%, 15%, 0.2),
+          /* side shadow */ 0px 5px 7px -1px hsla(34, 36%, 27%, 0.6),
+          /* brown shadow */ -2px 20px 15px -5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
+      }
+      .exhibit.video {
+        box-shadow: 0px 1px 1px 1px #666, /* inner highlight */ 0 0 0 10px #222,
+          /* frame */ 0px -1px 1px 10px #666,
+          /* top highlight */ -1px 1px 10px 5px rgba(100, 100, 100, 0.2),
+          /* surrounding */ 0px 5px 7px 9px hsla(34, 36%, 27%, 0.6),
+          /* brown shadow */ -2px 20px 15px -5px hsla(34, 36%, 27%, 0.2); /* light brown shadow */
+      }
+      img.icon {
+        display: none !important;
+      }
     }
+  }
 
-    .small {
-        .item {
-            max-width: 10rem;
-        }
+  #nope {
+    display: none;
+  }
+
+  .small {
+    .item {
+      max-width: 10rem;
     }
+  }
 }
 
 /* WORK */
 
 .outercontainer {
-    flex: 1;
+  flex: 1;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-end;
-
-        .works {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .exhibit {
-            margin: 3rem;
-            cursor: pointer;
-            display: inline-block;
-            img, video {
-                display: block;
-                max-width: calc(70vw);
-                max-height: calc(60vh);
-            }
-        }
-
-        .label {
-            margin: 3em;
-            max-width: 25em;
-            min-width: 15em;
-            padding: 1em;
-            overflow: hidden;
-            display: grid;
-            grid-template: auto auto / 1fr 7rem;
-            grid-gap: 1em;
-
-            p, ul, ol {
-                margin-bottom: 1em;
-            }
-
-            li {
-                margin-left: 1em;
-            }
-
-            .title {
-                font-size: 130%;
-                line-height: 100%;
-            }
-
-            .title, .title:hover {
-                color: black;
-            }
-
-            .rightcorner, .leftcorner {
-                p {
-                    margin-bottom: 0;
-                }
-            }
-
-            .rightcorner {
-                text-align: right;
-            }
-
-            .body {
-                grid-column: 1 / 3;
-            }
-
-            a {
-                color: $textlink;
-            }
-            a:hover {
-                color: $museumblue;
-            }
-        }
+    .works {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
+
+    .exhibit {
+      margin: 3rem;
+      cursor: pointer;
+      display: inline-block;
+      img,
+      video {
+        display: block;
+        max-width: calc(70vw);
+        max-height: calc(60vh);
+      }
+    }
+
+    .label {
+      margin: 3em;
+      max-width: 25em;
+      min-width: 15em;
+      padding: 1em;
+      overflow: hidden;
+      display: grid;
+      grid-template: auto auto / 1fr 7rem;
+      grid-gap: 1em;
+
+      p,
+      ul,
+      ol {
+        margin-bottom: 1em;
+      }
+
+      li {
+        margin-left: 1em;
+      }
+
+      .title {
+        font-size: 130%;
+        line-height: 100%;
+      }
+
+      .title,
+      .title:hover {
+        color: black;
+      }
+
+      .rightcorner,
+      .leftcorner {
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      .rightcorner {
+        text-align: right;
+      }
+
+      .body {
+        grid-column: 1 / 3;
+      }
+
+      code {
+        font-family: monospace;
+      }
+
+      a {
+        color: $textlink;
+      }
+      a:hover {
+        color: $museumblue;
+      }
+    }
+  }
 }
 
-.outercontainer + .outercontainer, .grid + .outercontainer {
-    margin-top: 10rem;
+.outercontainer + .outercontainer,
+.grid + .outercontainer {
+  margin-top: 10rem;
 }
 
 .mute {
-    cursor: pointer;
-    justify-self: flex-end;
-    grid-column: 2 / 3;
-    img {
-        max-height: 1rem;
-    }
+  cursor: pointer;
+  justify-self: flex-end;
+  grid-column: 2 / 3;
+  img {
+    max-height: 1rem;
+  }
 }
 
-#prev, #next {
-    color: white;
-    width: 3em;
-    height: 3em;
-    background: rgba(120, 120, 120, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: calc(50% - 1.5em);
-    transition: all 0.2s ease-in-out;
-    &:hover {
-        background: $museumblue;
-        width: 3.5rem;
-    }
-    img {
-        height: 2em;
-    }
+#prev,
+#next {
+  color: white;
+  width: 3em;
+  height: 3em;
+  background: rgba(120, 120, 120, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: calc(50% - 1.5em);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: $museumblue;
+    width: 3.5rem;
+  }
+  img {
+    height: 2em;
+  }
 }
-
 
 #prev {
-    left: 0;
-    border-radius: 0 10px 10px 0;
+  left: 0;
+  border-radius: 0 10px 10px 0;
 }
 
 #next {
-    right: 0;
-    border-radius: 10px 0 0 10px;
+  right: 0;
+  border-radius: 10px 0 0 10px;
 }
