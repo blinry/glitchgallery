@@ -2,23 +2,25 @@ prune:
   auto_prune: true
 
 data_sources:
-  -
-    type: filesystem
+  - type: filesystem
+    encoding: utf-8
 
 deploy:
   default:
     kind: rsync
     dst: "morr.cc:/web/glitchgallery.org"
-    options: [
-      '--group',
-      '--links',
-      '--perms',
-      '--partial',
-      '--progress',
-      '--recursive',
-      '--times',
-      '--verbose',
-      '-zz',
-      '--chmod=u=rwX,go=rX',
-      '--delete-after'
-    ]
+    options:
+      [
+        "--group",
+        "--links",
+        "--perms",
+        "--partial",
+        "--progress",
+        "--recursive",
+        "--times",
+        "--verbose",
+        "-zz",
+        "--chmod=u=rwX,go=rX",
+        "--delete-after",
+      ]
+

@@ -4,6 +4,7 @@ creator: polyfloyd
 homepage: https://polyfloyd.net
 year: 2014
 license: CC BY 4.0
+published: 2022-12-28T18:51+01:00
 ---
 
 After teaching myself the Go programming language in the year prior, I thought

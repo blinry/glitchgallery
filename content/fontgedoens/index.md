@@ -4,6 +4,7 @@ creator: pesco
 homepage: https://www.khjk.org
 year: 2008
 license: CC BY 4.0
+published: 2022-12-28T18:45+01:00
 ---
 
 It was supposed to become a text editor or something, but primarily I
