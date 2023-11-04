@@ -3,7 +3,7 @@ title: 3D in Isometricism?
 creator: JakeOJeff
 homepage: https://jakeojeff.itch.io
 year: 2023
-license: MIT
+license: CC BY 4.0
 published: 2023-07-27
 ---
 
