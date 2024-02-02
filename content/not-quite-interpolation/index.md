@@ -1,7 +1,7 @@
 ---
 title: Not Quite Interpolation
-creator: Sebastian Morr
-homepage: https://morr.cc
+creator: blinry
+homepage: https://blinry.org
 year: 2012
 license: CC0 1.0
 published: 2019-11-28

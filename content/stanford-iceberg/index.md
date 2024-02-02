@@ -1,6 +1,6 @@
 ---
 title: The Stanford Iceberg
-creator: Marc Kassubeck & Sebastian Morr
+creator: Marc Kassubeck & blinry
 year: 2012
 license: CC BY-SA 4.0
 published: 2017-03-17
