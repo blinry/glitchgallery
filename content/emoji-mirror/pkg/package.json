@@ -1,0 +1,14 @@
+{
+  "name": "spritefire_web",
+  "version": "0.1.0",
+  "files": [
+    "spritefire_web_bg.wasm",
+    "spritefire_web.js",
+    "spritefire_web.d.ts"
+  ],
+  "module": "spritefire_web.js",
+  "types": "spritefire_web.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

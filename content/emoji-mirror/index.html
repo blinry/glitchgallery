@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emoji Mirror</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Rosarivo:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪞</text></svg>">
+
+  <script type="module">
+    import init, { set_db, process_img, process_img_data } from "./pkg/spritefire_web.js"
+    await init()
+    set_db()
+
+    const videoStreamProcessor = {
+      doLoad() {
+        this.video = document.getElementById("my-video");
+        this.c1 = document.getElementById("my-canvas");
+        this.scale = document.getElementById("downscale-slider");
+        this.rate = document.getElementById("framerate-slider");
+        this.ctx1 = this.c1.getContext("2d");
+        this.ctx1.willReadFrequently = true;
+
+        this.video.addEventListener(
+          "play",
+          () => {
+            this.width = this.video.width;
+            this.height = this.video.height;
+            this.timerCallback();
+          },
+          false,
+        );
+      },
+
+      timerCallback() {
+        if (this.video.paused || this.video.ended) {
+          return;
+        }
+        this.computeFrame();
+        requestAnimationFrame(() => {
+          this.timerCallback();
+        }, 1000 / this.rate.value);
+      },
+
+      computeFrame() {
+        this.ctx1.drawImage(this.video, 0, 0, this.width, this.height);
+        const frame = this.ctx1.getImageData(0, 0, this.width, this.height);
+        const resultString = process_img_data(frame, this.scale.value);
+        document.getElementById("result").innerText = resultString;
+      },
+    };
+
+    // Find media devices and set video stream from the selected or default device
+    function setVideoElementFromDevice() {
+      var videoElement = document.querySelector('video');
+      var videoSelect = document.querySelector('select#videoSource');
+      videoSelect.onchange = getStream;
+      videoSelect.addEventListener("click", getStream)
+      getStream().then(getDevices).then(gotDevices);
+
+      function getDevices() {
+        // AFAICT in Safari this only gets default devices until gUM is called :/
+        return navigator.mediaDevices.enumerateDevices();
+      }
+
+      function gotDevices(deviceInfos) {
+        window.deviceInfos = deviceInfos; // make available to console
+        console.log('Available input and output devices:', deviceInfos);
+        for (const deviceInfo of deviceInfos) {
+          const option = document.createElement('option');
+          option.value = deviceInfo.deviceId;
+          if (deviceInfo.kind === 'videoinput') {
+            option.text = deviceInfo.label || `Camera ${videoSelect.length + 1}`;
+            videoSelect.appendChild(option);
+          }
+        }
+      }
+
+      function getStream() {
+        if (window.stream) {
+          window.stream.getTracks().forEach(track => {
+            track.stop();
+          });
+        }
+        const videoSource = videoSelect.value;
+        const constraints = {
+          audio: false,
+          video: { deviceId: videoSource ? { exact: videoSource } : undefined, width: 1280, height: 720 }
+        };
+        return navigator.mediaDevices.getUserMedia(constraints).
+          then(gotStream).catch();
+      }
+
+      function gotStream(stream) {
+        window.stream = stream; // make stream available to console
+        videoSelect.selectedIndex = [...videoSelect.options].
+          findIndex(option => option.text === stream.getVideoTracks()[0].label);
+        videoElement.srcObject = stream;
+      }
+
+      function handleError(error) {
+        console.error('Error: ', error);
+      }
+    }
+
+    function copyToClipboard() {
+      const r = document.createRange();
+      r.selectNode(document.getElementById("result"));
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(r);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+    }
+
+    // toggle visibility of controls on button press
+    document.getElementById('toggle-controls').addEventListener('click', function () {
+      var controls = document.getElementById('controls');
+      if (controls.style.display === 'none') {
+        controls.style.display = 'block';
+      } else {
+        controls.style.display = 'none';
+      }
+    });
+
+    document.getElementById("font-size-slider").addEventListener("input", function (e) {
+      document.documentElement.style.setProperty('--size', `calc(${e.target.value}vw / 420)`);
+    });
+
+    document.getElementById("copy-btn").addEventListener("click", copyToClipboard, false);
+    setVideoElementFromDevice()
+    videoStreamProcessor.doLoad()
+  </script>
+</head>
+
+<body>
+  <p>Gaze within the</p>
+  <h2>🪞 Emoji Mirror 🪞</h2>
+
+  <div class="select">
+    <label class="control-item" for="videoSource">Video:</label><select id="videoSource"></select>
+    <br>
+    <div id="controls" style="display: none;">
+      <label class="control-item" for="downscale-slider">Downscale:</label>
+      <input class="control-item" type="range" id="downscale-slider" min="1" max="14" value="4">
+      <br>
+      <label class="control-item" for="downscale-slider">Framerate:</label>
+      <input class="control-item" type="range" id="framerate-slider" min="4" max="24" value="12">
+      <br>
+      <label class="control-item" for="font-size-slider">Font size:</label>
+      <input class="control-item" type="range" id="font-size-slider" min="100" max="1000" value="100">
+      <br>
+      <button class="control-item" id="copy-btn">Copy!</button>
+    </div>
+    <button class="control-item" id="toggle-controls">Controls</button>
+  </div>
+
+  <div class="container">
+
+    <div id="result"></div>
+    <canvas id="my-canvas" width="640" height="360" hidden="true"></canvas>
+    <video id="my-video" autoplay muted playsinline width="640" height="360">
+    </video>
+  </div>
+
+  <div class="heavy-quote">
+    "Is there a difference between text and image??"
+  </div>
+  <div class="big-text">- 🤔</div>
+  <footer>A
+    <a href="https://github.com/joachimbbp/spritefire/">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github"
+        viewBox="0 0 16 16">
+        <path
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+      </svg> Spritefire
+    </a> project
+  </footer>
+
+  <style>
+    :root {
+      --size: calc(100vw / 420);
+    }
+
+    .big-text {
+      font-size: 30px;
+      margin: 4px;
+    }
+
+    .heavy-quote {
+      font-family: "Rosarivo", cursive;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 30px;
+      margin: 4px;
+    }
+
+    .control-item {
+      margin: 4px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: #000;
+      color: #fff;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    #my-video {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 180px;
+      aspect-ratio: 16/9;
+    }
+
+    #result {
+      border: #464242;
+      border-style: solid;
+      border-width: 15px;
+      padding: 4px;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: "Noto Color Emoji", sans-serif;
+      font-size: var(--size);
+      line-height: 1.2;
+      background: #000;
+      white-space: pre-wrap;
+      text-align: left;
+      margin: 0 auto;
+    }
+  </style>
+</body>
+
+</html>
