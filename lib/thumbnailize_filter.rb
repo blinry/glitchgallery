@@ -8,9 +8,11 @@ class Thumbnailize < Nanoc::Filter
             '-coalesce',
             '-background',
             'black',
+            '-alpha',
+            'off',
             '-resize',
             params[:height].to_s+"x"+params[:height].to_s+"^",
-            filename+"[60]", # to extract a good frame from gifs
+            filename+"[40]", # to extract a good frame from gifs
             "png:"+output_filename
         )
     end
