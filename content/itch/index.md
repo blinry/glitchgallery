@@ -1,7 +1,7 @@
 ---
 title: "Itch"
 creator: Emily Elhoffer
-homepage: emilyelhoffer.com
+homepage: https://emilyelhoffer.com
 year: 2022
 license: CC BY 4.0
 published: 2023-07-27

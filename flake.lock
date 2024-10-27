@@ -1,12 +1,15 @@
 {
   "nodes": {
     "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
       "locked": {
-        "lastModified": 1667395993,
-        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "lastModified": 1694529238,
+        "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
         "type": "github"
       },
       "original": {
@@ -15,13 +18,47 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1678901627,
+        "narHash": "sha256-U02riOqrKKzwjsxc/400XnElV+UtPUQWpANPlyazjH0=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "93a2b84fc4b70d9e089d029deacc3583435c2ed6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nanoc-setup": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1699110743,
+        "narHash": "sha256-HnlXQT0KVwQq+WI16qQgf7mr5RK610BbBxQB31HOh0c=",
+        "owner": "blinry",
+        "repo": "nanoc-setup",
+        "rev": "c5c15986c63f5708c5901f42e7e181b0ff91edd8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "blinry",
+        "repo": "nanoc-setup",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1667583900,
-        "narHash": "sha256-hXJQgvM8KNJsx3DLn8tJa9JH9C2HvI7dI/sDfLyNn30=",
+        "lastModified": 1681396825,
+        "narHash": "sha256-5at7jvJSopS3W4gRYZ/HTSrBFrN+bB8T7FfLovyCWIU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2ce9f6b6ac042b2ec427e78c7a668a15ab4fba8b",
+        "rev": "bafeb07d079bc16d15893a59a9725e4fc68b656c",
         "type": "github"
       },
       "original": {
@@ -33,7 +70,22 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nanoc-setup": "nanoc-setup"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
       }
     }
   },
