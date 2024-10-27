@@ -8,13 +8,9 @@ title: The Glitch Gallery
 
     markdown: Welcome to the Glitch Gallery, an **online exhibition of pretty software bugs**! This is a museum of accidental art, an enthusiastic embrace of mistakes, a celebration of emergent beauty. [Learn more?](/about/)
 
-    markdown: Below you can browse the exhibits in our collection. Keep scrolling down to see them in more detail! If you have ever encountered such an accidental artwork yourself, we **invite you to [submit it to us](/submit/)!**
+    markdown: Below you can browse the exhibits in our collection. If you have ever encountered such an accidental artwork yourself, we **invite you to [submit it to us](/submit/)!**
 
 .grid
     - exhibits.reverse.each do |exhibit|
         - works_for(exhibit).each do |work|
             == render "/tile.*", work: work, anchor: true
-
-- exhibits.reverse.each do |exhibit|
-    == render "/exhibit.*", item: exhibit do
-        == exhibit.compiled_content
