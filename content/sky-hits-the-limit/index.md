@@ -1,9 +1,10 @@
 ---
-title: Sky Hits The Limit
+title: Sky Hits the Limit
 creator: Tobias Rittig
 homepage: https://github.com/diiigle
 year: 2021
 license: CC0 1.0
+published: 2024-10-27
 ---
 
 When I encoded a sequence of OpenEXR images with FFmpeg into a video the result was rather unexpected.
