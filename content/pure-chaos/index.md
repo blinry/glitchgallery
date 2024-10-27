@@ -1,9 +1,10 @@
 ---
 title: pure chaos
 creator: Jana Marie Hemsing
-homepage: https://janamarie.dev & https://chaos.social/@janamarie
+homepage: https://janamarie.dev
 year: 2023
 license: CC BY-SA 4.0
+published: 2024-10-27
 ---
 
 An accidental collage of an unknown number of images shot at 37c3 in Hamburg with an analog camera. The Olympus 35 RD I used jammed and didn't advance it's film. This is of all 36 possible shots of a standard roll of film the sole one that was left on the camera. In it I have regocnized about 13 different shots by the time of writing. While I'm sad that I just got one image out of all the images I tried to create, the result is yet stunning and maybe captures the chaos present at said event in the only way possible. In essence, pure chaos.
