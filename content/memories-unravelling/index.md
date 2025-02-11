@@ -1,7 +1,7 @@
 ---
 title: Memories Unravelling
 creator: Lucas Werkmeister
-homepage: https://twitter.com/LucasWerkmeistr
+homepage: https://lucaswerkmeister.de
 year: 2020
 license: CC BY-SA 4.0
 published: 2020-11-28
@@ -11,4 +11,4 @@ The default GNOME desktop background (Adwaita theme, Jakub Steiner, [CC BY-SA 3.
 
 The glitch is, when it happens, remarkably stable. The background does not flicker, and switching to a different background and then back to the default preserves all the artifacts as well. Sometimes GNOME switches from the “day” to the “night” variant of the background, creating a new variant of the glitch in the process (the “night” variant seems to leave more of the artifacts visible) – compare images 1 & 2 or 4 & 5.
 
-Since this bug reappears a few times a month, this is a series which will continue to receive updates – until the GNOME bug that presumably causes it is fixed, I suppose.
+The glitch was last seen in [February 2021](https://twitter.lucaswerkmeister.de/LucasWerkmeistr/status/1363608750557450245/), so this series is probably concluded now.
